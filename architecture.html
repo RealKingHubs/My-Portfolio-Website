@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architecture | RealKingHubs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="cssfile/style.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <header id="header">
+      <nav class="navbar">
+        <div class="logo">RealKi<span>ngHubs</span></div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <section class="architecture-section">
+      <h1 class="section-title">Cloud Architecture Designs</h1>
+
+      <!--========Arch1========-->
+      <div class="architecture-grid">
+        <div class="arch-card">
+          <img
+            src="images/ALB-Architecture.drawio.png"
+            alt="AWS 3-Tier Architecture"
+            class="arch-img"
+          />
+          <div class="arch-card-body">
+            <h3>AWS 3-Tier Architecture</h3>
+            <p class="arch-desc">
+              Highly available web application using an Application Load
+              Balancer, EC2 Auto Scaling group, and RDS database.
+            </p>
+            <button class="view-more-btn">View More</button>
+            <div class="arch-more">
+              <h2>comming soon</h2>
+              <p>
+                Traffic is distributed through the ALB to EC2 instances in an
+                Auto Scaling Group across multiple Availability Zones.
+                Application data is stored in Amazon RDS with Multi-AZ failover
+                for durability and high availability.
+              </p>
+
+              <div class="card-links">
+                <a href="https://github" target="_blank" rel="noopener" class="link-accent"><i class="fab fa-github"></i> GitHub →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--======Arch2========-->
+        <div class="arch-card">
+          <img
+            src="https://github.com/user-attachments/assets/559d8c80-7f48-4020-8e33-b0b9d0f7668a"
+            alt="AWS 3-Tier Auto-Scaling Architecture"
+            class="arch-img"
+          />
+          <div class="arch-card-body">
+            <h3>Scalable & Secure AWS Architecture</h3>
+            <p class="arch-desc">This architecture demonstrates a <strong>Highly Available Web Application Provissioned Using Terraform</strong> deployed across two
+              Availability Zones (AZ-1 & AZ-2) within a VPC (10.0.0.0/16).</p>
+            <button class="view-more-btn">View More</button>
+            <div class="arch-more">
+              <h2>1. Connectivity & Traffic Management</h2>
+              <div>
+                <div>
+                  <strong>Inbound Traffic (ALB)</strong>
+                  <p>Users connect via the <strong>Internet Gateway</strong> to an <strong>Application Load Balancer
+                      (web-alb)</strong>. It listens on HTTP:80 and spans both AZs to distribute traffic to healthy web servers.</p>
+                </div>
+                <div>
+                  <strong>Secure Administration</strong>
+                  <p>A <strong>Bastion Host</strong> in the public subnet serves as a secure "jump server." It allows <strong>SSH
+                      access</strong> to private instances only from a specific administrator's IP address.</p>
+                </div>
+              </div>
+              
+              <h2>2. Tiered Network Segmentation</h2>
+              <ul>
+                <li><strong>Public Subnets (10.0.1.0/24 & 10.0.2.0/24):</strong> These house the <strong>NAT Gateways</strong> and
+                  <strong>Elastic IPs</strong>. The NAT Gateways allow private instances to reach the internet for updates while
+                  blocking unsolicited inbound connections.</li>
+                <li><strong>Private Subnets (10.0.3.0/24 & 10.0.4.0/24):</strong> These contain the <strong>Apache Web
+                    Servers</strong>. These instances have <strong>no public IPs</strong>, ensuring they are isolated from direct
+                  internet exposure.</li>
+              </ul>
+              
+              <h2>3. High Availability & Scaling</h2>
+              <ul>
+                <li><strong>Auto Scaling Group (web-asg):</strong> Automatically manages the server fleet. It is configured with a
+                  <strong>minimum of 2</strong> and a <strong>maximum of 5</strong> instances, performing health checks via the ELB.
+                </li>
+                <li><strong>Target Group (web-tg):</strong> Groups the web instances for the Load Balancer. It monitors health by
+                  looking for <strong>HTTP 200-399</strong> response codes.</li>
+                <li><strong>Launch Templates:</strong> Standardize instance deployment using <strong>IMDSv2</strong> with a hop limit
+                  of 1 to enhance security against SSRF attacks.</li>
+              </ul>
+              
+            
+                <h3>Routing Summary</h3>
+                <div>
+                 <span>Public Route Tables: 0.0.0.0/0 → Internet Gateway (IGW)</span>
+                </div>
+                <div>
+                 <span>Private Route Tables: 0.0.0.0/0 → NAT Gateway (NAT GW)</span>
+                </div>
+
+                <div class="card-links">
+                  <a href="https://github.com/RealKingHubs/Terraform-AWS-VPC-ALB-Auto-Scaling.git" target="_blank" rel="noopener" class="link-accent"><i class="fab fa-github"></i> GitHub →</a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!--=========Arch3==========-->
+        <div class="arch-card">
+          <img
+            src="images/Serverless-Architecture.drawio.png"
+            alt="Serverless Architecture"
+            class="arch-img"
+          />
+          <div class="arch-card-body">
+            <h3>Serverless Architecture</h3>
+            <p class="arch-desc">
+              Event-driven, fully serverless architecture using API Gateway,
+              Lambda, and DynamoDB.
+            </p>
+            <button class="view-more-btn">View More</button>
+            <div class="arch-more">
+              <h2>comming soon</h2>
+              <p>
+                API Gateway receives HTTP requests and triggers Lambda
+                functions. Lambda processes the data and writes results to
+                DynamoDB. No servers to manage — scales automatically with
+                demand.
+              </p>
+
+              <div class="card-links">
+                <a href="https://github" target="_blank" rel="noopener" class="link-accent"><i class="fab fa-github"></i> GitHub →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--=======Arch4=======-->
+        <div class="arch-card">
+          <img
+            src="https://github.com/user-attachments/assets/2e1f5926-37c7-4efb-9e56-f1aac10b9db8"
+            alt="Zero-Secret ECS CI/CD Pipeline"
+            class="arch-img"
+          />
+          <div class="arch-card-body">
+            <h3>Pipeline Breakdown</h3>
+            <p class="arch-desc">
+              The image describes a
+              <strong>CI/CD (Continuous Integration/Continuous Deployment)
+                Pipeline</strong>
+              that automates taking code from a developer and deploying it
+              into a secure, scalable AWS environment.
+            </p>
+            <button class="view-more-btn">View More</button>
+            <div class="arch-more">
+             
+
+              <h3>1. GitHub Actions (The Automation Engine)</h3>
+              <ul>
+                <li>
+                  <strong>Checkout Code:</strong> Pulls the latest code from the
+                  repository.
+                </li>
+                <li>
+                  <strong>OIDC Auth to AWS:</strong> Securely connects to AWS
+                  using OpenID Connect (OIDC) instead of storing long-term
+                  secrets.
+                </li>
+                <li>
+                  <strong>Docker Build:</strong> Packages the application into a
+                  Docker image.
+                </li>
+                <li>
+                  <strong>Push to ECR:</strong> Uploads the new image to Amazon
+                  ECR (a private storage for Docker images).
+                </li>
+                <li>
+                  <strong>Update Task Def & Deploy:</strong> Updates the
+                  instructions for how the app should run and tells AWS ECS to
+                  start the new version.
+                </li>
+              </ul>
+
+              <h3>2. AWS Cloud (The Infrastructure)</h3>
+              <ul>
+                <li>
+                  <strong>Amazon ECR:</strong> A private registry that holds
+                  your application images.
+                </li>
+                <li>
+                  <strong>ECS Cluster (Fargate):</strong> This is where the app
+                  actually runs. Fargate is "serverless," meaning AWS manages
+                  the underlying servers for you.
+                </li>
+                <li>
+                  <strong>Self-Healing:</strong> If a container crashes, ECS
+                  automatically detects it and starts a new one to keep the app
+                  running.
+                </li>
+                <li>
+                  <strong>CloudWatch:</strong> Collects logs and metrics so you
+                  can see how your app is performing and troubleshoot errors.
+                </li>
+              </ul>
+              <div class="card-links">
+                <a
+                  href="https://github.com/RealKingHubs/CICD-Automation-Pipeline.git"
+                  target="_blank"
+                  rel="noopener"
+                  class="link-accent"
+                  ><i class="fab fa-github"></i> GitHub →</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--======Arch5=========-->
+        <div class="arch-card">
+          <img
+            src="https://github.com/user-attachments/assets/9e7acddf-839b-4b15-882d-36c0d8b46630"
+            alt="Secure HA AWS Web Architecture"
+            class="arch-img"
+          />
+          <div class="arch-card-body">
+            <h3>Multi-AZ Secure Web Architecture</h3>
+            <p class="arch-desc">
+              This diagram illustrates a
+              <strong>Highly Available and Secure Web Application</strong>
+              deployed across two Availability Zones (eu-west-1a & eu-west-1b)
+              in the Ireland region.
+            </p>
+
+            <button class="view-more-btn">View More</button>
+            <div class="arch-more">
+              <h2>1. External Connectivity</h2>
+              <div>
+                <div >
+                  <strong>Public Traffic (Users)</strong>
+                  <p>
+                    Traffic flows from the Internet through the
+                    <strong>Internet Gateway</strong> to a
+                    <strong>Classic Load Balancer</strong>. This ensures high
+                    availability by distributing requests evenly.
+                  </p>
+                </div>
+                <div>
+                  <strong>Admin Management</strong>
+                  <p>
+                    Administrators connect via an <strong>SSH Tunnel</strong>.
+                    They must "jump" through a <strong>Bastion Host</strong> in
+                    the public subnet to reach the private servers.
+                  </p>
+                </div>
+              </div>
+
+              <h2>2. Network Segmentation</h2>
+              <ul>
+                <li>
+                  <strong>Public Subnets:</strong> Contain the
+                  <strong>Bastion Host</strong> (for management) and the
+                  <strong>NAT Gateway</strong>. The NAT Gateway allows private
+                  servers to download updates without being exposed to the
+                  internet.
+                </li>
+                <li>
+                  <strong>Private Subnets:</strong> Secure zones hosting
+                  <strong>Web-Server-1</strong> and
+                  <strong>Web-Server-2</strong>. These instances have
+                  <strong>Private IPs only</strong> and cannot be reached
+                  directly from the outside world.
+                </li>
+              </ul>
+
+              <h2>3. Key Infrastructure Components</h2>
+              <ul>
+                <li>
+                  <strong>Classic Load Balancer (CLB):</strong> Sits in the
+                  public layer to receive HTTP traffic and forward it to the
+                  private web servers.
+                </li>
+                <li>
+                  <strong>Multi-AZ Redundancy:</strong> The architecture is
+                  mirrored across two zones. If one zone fails, the other
+                  continues to serve traffic, preventing downtime.
+                </li>
+                <li>
+                  <strong>Security Groups:</strong> Acts as virtual firewalls,
+                  restricting traffic so only the Load Balancer can talk to the
+                  Web Servers on specific ports.
+                </li>
+              </ul>
+
+              <div>
+                <h3>Network Traffic Legend</h3>
+                <div>
+                  <span>Solid Blue: Public Web Traffic (HTTP/80)</span>
+                </div>
+                <div>
+                  <span>Orange Dotted: Secure Management Tunnel (SSH/22)</span>
+                </div>
+                <div>
+                  <span>Green Dotted: NAT Gateway (Outbound Traffic)</span>
+                </div>
+
+                <div class="card-links">
+                  <a href="https://github.com/RealKingHubs/aws-ansible-secure-web-deployment.git" target="_blank" rel="noopener" class="link-accent"><i class="fab fa-github"></i> GitHub →</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--=======Arch6======-->
+        <div class="arch-card">
+          <img
+            src="images/arch6.png"
+            alt="Secure VPC Network"
+            class="arch-img"
+          />
+          <div class="arch-card-body">
+            <h3>Secure VPC Network</h3>
+            <p class="arch-desc">
+              Production VPC with strict public/private subnet separation, NAT
+              Gateways, and layered security controls.
+            </p>
+            <button class="view-more-btn">View More</button>
+            <div class="arch-more">
+              <h2>comming soon</h2>
+              <p>
+                Public subnets host the ALB and NAT Gateways only. Application
+                and database tiers live in private subnets with no direct
+                internet exposure. Security groups and NACLs enforce
+                least-privilege access at every layer.
+              </p>
+              <div class="card-links">
+                <a href="https://github" target="_blank" rel="noopener"
+                  class="link-accent"><i class="fab fa-github"></i> GitHub →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for full-size image view -->
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" alt="Architecture diagram" />
+    </div>
+
+    <footer>
+      <p>
+        © <span id="year"></span> <strong>RealKingHubs</strong> · Cloud
+        Engineering Student · AltSchool Africa
+      </p>
+    </footer>
+
+    <script src="cssfile/style.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  </body>
+</html>
