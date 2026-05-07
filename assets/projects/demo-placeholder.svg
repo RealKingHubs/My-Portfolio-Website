@@ -1,0 +1,21 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" rx="36" fill="#EDF5EF"/>
+  <rect x="42" y="42" width="1116" height="666" rx="28" fill="#F7FBF8" stroke="#D8E7DD" stroke-width="4"/>
+  <rect x="102" y="120" width="996" height="420" rx="24" fill="url(#paint0_linear)"/>
+  <rect x="132" y="152" width="200" height="18" rx="9" fill="#A8C7B2"/>
+  <rect x="132" y="188" width="286" height="18" rx="9" fill="#C7DCD0"/>
+  <rect x="132" y="238" width="936" height="232" rx="18" stroke="#CFE0D4" stroke-width="3" stroke-dasharray="12 10"/>
+  <circle cx="600" cy="356" r="72" fill="#2A7A56" fill-opacity="0.12"/>
+  <path d="M566 356L590 380L636 334" stroke="#2A7A56" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="102" y="584" width="278" height="26" rx="13" fill="#2A7A56"/>
+  <rect x="102" y="626" width="396" height="16" rx="8" fill="#9CB6A7"/>
+  <rect x="102" y="656" width="318" height="16" rx="8" fill="#C0D5C8"/>
+  <text x="600" y="274" text-anchor="middle" fill="#2A7A56" font-family="Arial, sans-serif" font-size="44" font-weight="700">Demo Preview</text>
+  <text x="600" y="320" text-anchor="middle" fill="#52685B" font-family="Arial, sans-serif" font-size="24">Replace this image when your project screenshot is ready.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="102" y1="120" x2="1098" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9FCFA"/>
+      <stop offset="1" stop-color="#E2EFE6"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RealKingHubs portfolio showcasing cloud engineering, AWS architecture, CI/CD automation, and infrastructure projects." />
   <title>RealKingHubs | Cloud Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="cssfile/style.css" />
 </head>
@@ -18,84 +20,72 @@
       <div class="logo"><a href="https://realkinghubs.netlify.app">RealKi<span>ngHubs</span></a></div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="architecture.html">Architecture</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="pages/project.html">Projects</a></li>
+        <li><a href="pages/architecture.html">Architecture</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
       </ul>
-      <div class="menu-toggle" id="menuToggle">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu">
         <i class="fas fa-bars"></i>
-      </div>
+      </button>
     </nav>
   </header>
 
-
-  <!-- HOME -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <p class="hero-tag">AltSchool Africa · Cloud Engineering</p>
-      <h1>Hello, I'm <span>Kingsley Uchenna Odo</span></h1>
+      <p class="hero-tag">AltSchool Africa - Cloud Engineering</p>
+      <h1>Hello, I'm <span>Odo Kingsley Uchenna</span></h1>
       <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
       <p class="hero-bio">
         Designing scalable, secure, and automated cloud infrastructures
         using AWS and modern DevOps practices.
       </p>
       <div class="hero-buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Hire Me</a>
+        <a href="pages/project.html" class="btn primary">View Projects</a>
+        <a href="pages/contact.html" class="btn secondary">Hire Me</a>
       </div>
     </div>
   </section>
 
-
-  <!-- ABOUT -->
   <section id="about" class="about section">
     <h2 class="section-title">About Me</h2>
     <div class="about-container">
-
       <div class="about-image">
-        <!--==== MY Profile photo ===-->
-        <img src="assets/images/Blue-pic.png.png" alt="Kingsley Uchenna Odo" />
+        <img src="assets/images/white_tech.png" alt="Kingsley Uchenna Odo" loading="lazy" decoding="async" />
         <div class="img-border"></div>
       </div>
 
       <div class="about-text">
         <p>
-          Meet Kingsley a <strong>Cloud Engineering student at AltSchool Africa</strong>,
-          specialising in designing resilient cloud-native systems, CI/CD automation,
+          Meet Kingsley, a <strong>Cloud Engineering student at AltSchool Africa</strong>,
+          specialising in resilient cloud-native systems, CI/CD automation,
           containerisation, and infrastructure as code.
         </p>
         <p>
-          I build infrastructure the right way from the start, secure by design,
+          I build infrastructure the right way from the start: secure by design,
           fully automated, and observable end to end. Every project follows production
           standards, not just tutorial steps.
         </p>
         <p>
-          Currently seeking a <strong>Cloud / DevOps internship</strong> where I can
+          Currently seeking a <strong>Cloud / DevOps Role</strong> where I can
           contribute to real infrastructure and grow into a full-time engineering role.
         </p>
 
         <ul class="about-details">
           <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</li>
-          <li><i class="fas fa-graduation-cap"></i> AltSchool Africa · Cloud Engineering</li>
-          <li><i class="fas fa-circle-dot"></i> Open to internship . available immediately</li>
+          <li><i class="fas fa-graduation-cap"></i> AltSchool Africa - Cloud Engineering</li>
+          <li><i class="fas fa-circle-dot"></i> Open to internship, available immediately</li>
         </ul>
 
         <a href="assets/resume/Odo_Kingsley_Resume_v1.1.pdf" download class="btn primary">
           <i class="fas fa-download"></i> Download Resume
         </a>
       </div>
-
     </div>
   </section>
 
-
-  <!-- SKILLS -->
   <section id="skills" class="skills section">
     <h2 class="section-title">Technical Skills</h2>
     <div class="skills-grid">
-
       <div class="skill-card">
         <div class="skill-card-head">
           <i class="fas fa-cloud"></i>
@@ -168,336 +158,57 @@
           <span>CloudWatch</span><span>Grafana</span><span>Prometheus</span><span>SNS</span>
         </div>
       </div>
-
     </div>
   </section>
-
-
-  <!-- PROJECTS -->
-  <section id="projects" class="projects section">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="filter-row">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="aws">AWS</button>
-      <button class="filter" data-filter="cicd">CI/CD</button>
-      <button class="filter" data-filter="iac">IaC</button>
-      <button class="filter" data-filter="containers">Containers</button>
-      <button class="filter" data-filter="linux">Linux</button>
-    </div>
-
-    <div class="project-grid">
-        <!-- P1 -->
-      <div class="project-card featured" data-tags="aws,cicd,containers">
-        <div class="card-header">
-          <span class="card-icon">🚀</span>
-          <span class="featured-badge">★ Featured</span>
-        </div>
-        <h3>Zero-Secret CI/CD Pipeline for AWS ECSC</h3>
-        <img src="https://raw.githubusercontent.com/RealKingHubs/CICD-Automation-Pipeline/37d70cb33a3d060eb8e4baa5d9db7cf39c758d3e/screenshots/Screenshot%202026-03-07%20190615.png" alt="CI/CD Pipeline screenshot" class="project-img" />
-        <p>
-          I designed and implemented a secure production CI/CD pipeline that deploys a containerized Node.js backend service to AWS
-          ECS Fargate using GitHub Actions with OpenID Connect (OIDC) authentication.
-        </p>
-        <p>
-          The architecture eliminates long-lived AWS credentials by using temporary IAM roles issued through GitHub’s OIDC
-          federation, creating a zero-secret deployment pipeline. Every code push automatically builds a Docker image, pushes it
-          to Amazon ECR, updates the ECS task definition, and performs a rolling deployment with minimal downtime.
-        </p>
-        <p>
-        The system also integrates Amazon CloudWatch logging and ECS self-healing, ensuring operational visibility and automatic
-        container recovery in case of failure.
-        </p>
-        <h3>Key Features I Archived</h3>
-        <ul class="card-outcomes">
-          <li>Zero stored credentials using GitHub OIDC authentication</li>
-          <li>Automated CI/CD pipeline triggered on every push to main</li>
-          <li>Dockerized Node.js backend service</li>
-          <li>Secure container registry using Amazon ECR with image scanning</li>
-          <li>Serverless container orchestration with AWS ECS Fargate</li>
-          <li>Rolling deployments with traceable image tags (Git commit SHA)</li>
-          <li>Self-healing containers automatically restarted by ECS</li>
-          <li>Centralized logging with Amazon CloudWatch</li>
-        </ul>
-        <div class="card-stack">
-          <span>GitHub Actions</span><span>ECS Fargate</span><span>ECR</span>
-          <span>Docker</span><span>IAM OIDC</span><span>CloudWatch</span>
-        </div>
-        <div class="card-links">
-          <a href="https://medium.com/@RealKingHubs/how-i-built-a-production-grade-aws-ecs-deployment-pipeline-with-zero-stored-secrets-1f8b4c70afbe" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-          <a href="https://github.com/RealKingHubs/CICD-Automation-Pipeline.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-          <a href="architecture.html" rel="noopener" class="link-muted">Diagram</a>
-        </div>
-      </div>
-
-       <!-- P2 -->
-      <div class="project-card" data-tags="aws,iac">
-        <div class="card-header"><span class="card-icon">🌐</span></div>
-        <h3>Terraform AWS VPC: Production Infrastructure</h3>
-        <img src="https://github.com/user-attachments/assets/98786813-c02e-4bae-a6bd-5301d9cc0383"
-          alt="AWS VPC architecture diagram" class="project-img" />
-        <p>
-          Production-grade AWS infrastructure provisioned entirely with Terraform. Built a
-          multi-AZ VPC with public and private subnet tiers, redundant NAT Gateways per
-          Availability Zone, an Application Load Balancer routing HTTP traffic to a private
-          Auto Scaling Group of Apache web servers, and a Bastion Host as the single SSH
-          entry point. Security groups enforce least-privilege access through chaining rather
-          than open CIDR rules. IMDSv2 is enforced on all instances. Remote state is stored
-          in S3 with versioning, AES256 encryption, and DynamoDB locking to prevent concurrent
-          state corruption.
-        </p>
-        <h3>Key Features I Archived</h3>
-        <ul class="card-outcomes">
-          <li>Multi-AZ high availability with one NAT Gateway per AZ</li>
-          <li>Private web tier with zero direct internet exposure to web servers</li>
-          <li>Auto Scaling Group with ELB health checks and zero downtime rolling refresh</li>
-          <li>Least-privilege security via security group chaining</li>
-          <li>IMDSv2 enforced SSRF protection on all EC2 instances</li>
-          <li>Remote state on S3 with DynamoDB locking and versioning</li>
-        </ul>
-        <div class="card-stack">
-          <span>Terraform</span>
-          <span>AWS VPC</span>
-          <span>EC2</span>
-          <span>ALB</span>
-          <span>Auto Scaling</span>
-          <span>S3</span>
-          <span>DynamoDB</span>
-          <span>IAM</span>
-          <span>Bash</span>
-        </div>
-        <div class="card-links">
-          <a href="https://medium.com/@RealKingHubs/building-a-production-grade-aws-vpc-with-terraform-what-i-learned-what-broke-and-why-i-made-the-c65242cd8338" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-          <a href="https://github.com/RealKingHubs/Terraform-AWS-VPC-ALB-Auto-Scaling.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-          <a href="architecture.html" rel="noopener" class="link-muted">Diagram</a>
-        </div>
-      </div>
-     
-      <!-- P3 -->
-<div class="project-card featured" data-tags="aws,cicd,linux">
-  <div class="card-header">
-    <span class="card-icon">🚀</span>
-    <span class="featured-badge">★ Featured</span>
-  </div>
-  <h3>Secure AWS Infrastructure with Bastion Host and Ansible Automation</h3>
-  <img
-    src="https://github.com/user-attachments/assets/d6c8e436-49f0-491f-954b-26ef34c6e5b2"
-    alt="Ansible-Automation" class="project-img" />
-  <p>
-    Secure AWS architecture with private EC2 instances, Bastion host access, automated Ansible configuration, and
-    load-balanced high availability.
-  </p>
-  <p>
-    I designed and deployed a secure, highly available web application infrastructure on AWS that isolates backend servers
-    from the public internet while maintaining controlled administrative access.    
-    The infrastructure uses private subnets for application servers, a Bastion Host for secure SSH access, and a Load
-    Balancer to distribute traffic across multiple instances, ensuring both security and reliability.    
-    All server configurations were automated using Ansible, eliminating manual setup and ensuring consistent deployments.
-  </p>
-  <h3>Key Features I Archived</h3>
-  <ul class="card-outcomes">
-    <li>Secure network architecture using public and private subnets.</li>
-    <li>Bastion Host (Jump Server) for controlled SSH access to private instances.</li>
-    <li>High availability using a Load Balancer across multiple Availability Zones.</li>
-    <li>Automated configuration management with Ansible playbooks.</li>
-    <li>Infrastructure version control using Git.</li>
-    <li>Deployment validation using a Bash pre-flight script.</li>
-    <li>Dynamic web content showing server hostname and private IP to confirm load balancing</li>
-  </ul>
-  <div class="card-stack">
-    <span>AWS VPC</span><span>EC2</span><span>AWS CLB</span>
-    <span>Linux (Ubuntu)</span><span>Ansible</span><span>Bash</span><span>Git</span><span>Nginx</span>
-  </div>
-  <div class="card-links">
-    <a href="https://medium.com/@RealKingHubs/how-i-deployed-a-secure-web-application-on-aws-a-practical-guide-for-junior-cloud-engineers-d84ac3553b8f" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-    <a href="https://github.com/RealKingHubs/aws-ansible-secure-web-deployment.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i>
-      GitHub</a>
-    <a href="architecture.html" rel="noopener" class="link-muted"><i class="fab fa-github"></i>Diagram</a>
-  </div>
-</div>
-            <!-- P4 -->
-      <div class="project-card" data-tags="containers">
-        <div class="card-header"><span class="card-icon">⚙️</span></div>
-        <h3>Kubernetes App Deployment Coming Soon!</h3>
-        <p>
-          Multi-container app on Kubernetes with Helm charts, HPA, liveness/readiness probes,
-          ConfigMaps, and a full Prometheus + Grafana monitoring stack.
-        </p>
-        <ul class="card-outcomes">
-          <li>HPA auto-scaling at 70% CPU</li>
-          <li>Prometheus + Grafana observability</li>
-          <li>Zero-downtime rolling updates</li>
-        </ul>
-        <div class="card-stack">
-          <span>Kubernetes</span><span>Helm</span><span>Prometheus</span><span>Grafana</span>
-        </div>
-        <div class="card-links">
-          <a href="YOUR_MEDIUM_LINK" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-          <a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
-           <!-- P5 -->
-      <div class="project-card" data-tags="cicd,aws">
-        <div class="card-header"><span class="card-icon">🔧</span></div>
-        <h3>Jenkins CI on EC2 Coming Soon!</h3>
-        <p>
-          Jenkins server on EC2 with a declarative pipeline that lints, tests, builds, and
-          deploys a Python app. GitHub webhooks trigger the pipeline automatically.
-        </p>
-        <ul class="card-outcomes">
-          <li>Webhook-triggered automated builds</li>
-          <li>Least-privilege IAM and SGs</li>
-          <li>EC2 instance hardening</li>
-        </ul>
-        <div class="card-stack">
-          <span>Jenkins</span><span>EC2</span><span>Python</span><span>Webhooks</span>
-        </div>
-        <div class="card-links">
-          <a href="YOUR_MEDIUM_LINK" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-          <a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-          <!-- P6 -->
-      <div class="project-card" data-tags="aws">
-        <div class="card-header"><span class="card-icon">📊</span></div>
-        <h3>AWS Monitoring & Alerting Coming Soon!</h3>
-        <p>
-          End-to-end observability for a multi-service AWS environment — CloudWatch dashboards,
-          SNS alarms, and a Lambda function posting alerts to Slack automatically.
-        </p>
-        <ul class="card-outcomes">
-          <li>Real-time Slack alerts via Lambda</li>
-          <li>Custom CloudWatch dashboards</li>
-          <li>Sub-minute alert latency</li>
-        </ul>
-        <div class="card-stack">
-          <span>CloudWatch</span><span>SNS</span><span>Lambda</span><span>Python</span>
-        </div>
-        <div class="card-links">
-          <a href="YOUR_MEDIUM_LINK" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-          <a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
-         <!-- P7 -->
-      <div class="project-card" data-tags="aws,linux">
-        <div class="card-header"><span class="card-icon">🖥️</span></div>
-        <h3>Linux Server Automation Coming Soon!</h3>
-        <p>
-          Production Bash scripts for server setup, log rotation, disk monitoring,
-          user provisioning, and scheduled encrypted S3 backups via cron.
-        </p>
-        <ul class="card-outcomes">
-          <li>S3-encrypted scheduled backups</li>
-          <li>Disk threshold alerting</li>
-          <li>Zero manual server ops</li>
-        </ul>
-        <div class="card-stack">
-          <span>Bash</span><span>Linux</span><span>S3</span><span>AWS CLI</span>
-        </div>
-        <div class="card-links">
-          <a href="YOUR_MEDIUM_LINK" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-          <a href="YOUR_GITHUB_LINK" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
-      
-    </div>
-  </section>
-
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact section">
-    <h2 class="section-title">Contact Me</h2>
-    <div class="contact-wrapper">
-
-      <div class="contact-left">
-        <p class="contact-intro">
-          I'm actively looking for a Cloud / DevOps internship.
-          If you have an opportunity or just want to connect — reach out.
-          I'll reply within 24 hours.
-        </p>
-        <form
-          id="contactForm"
-          action="https://formsubmit.co/odokingsleyu@gmail.com"
-          method="POST"
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="New message from RealKingHubs portfolio" />
-          <input type="text"   name="_honey"   style="display:none" />
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">Name</label>
-              <input type="text" id="fname" name="name" placeholder="Kingsley Odo" required />
-            </div>
-            <div class="form-group">
-              <label for="femail">Email</label>
-              <input type="email" id="femail" name="email" placeholder="realkinghubs@company.com" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="fsubject">Subject</label>
-            <input type="text" id="fsubject" name="subject" placeholder="Internship Opportunity" required />
-          </div>
-          <div class="form-group">
-            <label for="fmessage" >Message</label>
-            <textarea id="fmessage" name="message" rows="5"
-              placeholder="Tell me about the opportunity..." required minlength="10"></textarea>
-          </div>
-          <button type="submit" class="btn primary" id="submitBtn">
-            Send Message <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-        <div id="formStatus" style="display:none; margin-top: 20px; padding: 10px; border-radius: 5px;"></div>
-      </div>
-
-      <div class="contact-right">
-        <h3>Find Me Online</h3>
-        <div class="social-links">
-          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i>
-            <div><span>GitHub</span><small>Checkout my repository on GitHub</small></div>
-            <i class="fas fa-arrow-right arrow"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/kingsley-odo-8b81a6369/" target="_blank" rel="noopener">
-            <i class="fab fa-linkedin"></i>
-            <div><span>LinkedIn</span><small>Connect with me on LinkedIn</small></div>
-            <i class="fas fa-arrow-right arrow"></i>
-          </a>
-          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener">
-            <i class="fab fa-medium"></i>
-            <div><span>Medium</span><small>Read my articles on Medium</small></div>
-            <i class="fas fa-arrow-right arrow"></i>
-          </a>
-          <a href="https://hashnode.com/@RealKingHubs" target="_blank" rel="noopener">
-            <i class="fas fa-blog"></i>
-            <div><span>HashNode</span><small>Read my blog posts on HashNode</small></div>
-            <i class="fas fa-arrow-right arrow"></i>
-          </a>
-          <a href="https://x.com/KingsleyOd93772" target="_blank" rel="noopener">
-            <i class="fab fa-x-twitter"></i>
-            <div><span>Twitter / X</span><small>Follow me on Twitter</small></div>
-            <i class="fas fa-arrow-right arrow"></i>
-          </a>
-        </div>
-        <div class="avail-pill">
-          <span class="avail-dot"></span>
-          Available for internship — starting immediately
-        </div>
-      </div>
-
-    </div>
-  </section>
-
 
   <footer>
-    <p>© <span id="year"></span> <strong>RealKingHubs</strong> · Cloud Engineering Student · AltSchool Africa</p>
+    <div class="site-footer-main">
+      <div class="site-footer-brand">
+        <a href="#home" class="site-footer-logo">
+          <i class="fas fa-globe-africa"></i>
+          <span>RealKingHubs</span>
+        </a>
+        <p class="site-footer-copy">
+          Welcome to my cloud engineering portfolio. I build secure AWS infrastructure,
+          CI/CD pipelines, and automation-focused systems designed for real-world delivery.
+        </p>
+      </div>
+
+      <div class="site-footer-column">
+        <h3>Info</h3>
+        <div class="site-footer-links">
+          <a href="pages/project.html">Projects</a>
+          <a href="pages/architecture.html">Architecture</a>
+          <a href="pages/contact.html">Contact</a>
+          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener">Medium</a>
+        </div>
+      </div>
+
+      <div class="site-footer-column">
+        <h3>Contact me</h3>
+        <div class="site-footer-contact">
+          <p><i class="fas fa-location-dot"></i> Lagos, Nigeria</p>
+          <a href="tel:+2349135025695"><i class="fas fa-square-phone"></i> Phone: +234 913 502 5695</a>
+          <a href="mailto:odokingsleyu@gmail.com"><i class="fas fa-envelope"></i> odokingsleyu@gmail.com</a>
+        </div>
+
+        <p class="site-footer-social-title">Follow me</p>
+        <div class="site-footer-social">
+          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kingsley-odo-8b81a6369/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/KingsleyOd93772" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <p>&copy; <span id="year"></span>. All Rights Reserved | Design by <a href="https://realkinghubs.netlify.app">RealKingHubs</a></p>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="Jsfiles/script.js"></script>
-  <script src="Jsfiles/data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="Jsfiles/script.js" defer></script>
 </body>
 </html>

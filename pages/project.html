@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cloud engineering projects by RealKingHubs covering AWS, CI/CD, automation, Terraform, and infrastructure delivery." />
+  <title>Projects | RealKingHubs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../cssfile/style.css" />
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header id="header">
+    <nav class="navbar">
+      <div class="logo"><a href="https://realkinghubs.netlify.app">RealKi<span>ngHubs</span></a></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="./project.html">Projects</a></li>
+        <li><a href="./architecture.html">Architecture</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <section class="page-hero page-hero-projects">
+    <div class="page-hero-inner">
+      <p class="page-hero-tag">Project Showcase</p>
+      <h1>Production-minded cloud projects with room to explore the full story.</h1>
+      <p class="page-hero-copy">
+        This page keeps every build visible in a clean card layout. Open any project to see
+        the problem, architecture choices, automation details, benefits, and resource links.
+      </p>
+      <div class="page-hero-actions">
+        <a href="#project-library" class="btn primary">Browse Projects</a>
+        <a href="./contact.html" class="btn secondary">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="project-library" class="projects section project-page-section">
+    <div class="project-section-head">
+      <h2 class="section-title">Projects Library</h2>
+      <p class="projects-page-copy">
+        Expand any card for implementation details, outcomes, tech stack, article links,
+        and supporting architecture references.
+      </p>
+    </div>
+
+    <div class="filter-row">
+      <button class="filter active" data-filter="all" type="button">All</button>
+      <button class="filter" data-filter="aws" type="button">AWS</button>
+      <button class="filter" data-filter="cicd" type="button">CI/CD</button>
+      <button class="filter" data-filter="iac" type="button">IaC</button>
+      <button class="filter" data-filter="containers" type="button">Containers</button>
+      <button class="filter" data-filter="linux" type="button">Linux</button>
+    </div>
+
+    <div class="project-grid project-grid-library">
+      <article class="project-card project-card-expandable featured is-open" data-tags="aws,cicd,containers">
+        <div class="card-header">
+          <i class="fas fa-rocket card-icon"></i>
+          <span class="featured-badge">Featured</span>
+        </div>
+        <h3>Zero-Secret CI/CD Pipeline for AWS ECSC</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/Zero-secret-CICD_ECS.png" alt="CI/CD Pipeline screenshot" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          A secure CI/CD system that deploys a Node.js backend to AWS with GitHub OIDC, Docker,
+          Amazon ECR, ECS Fargate, and CloudWatch monitoring.
+        </p>
+        <div class="card-stack">
+          <span>GitHub Actions</span><span>Docker</span><span>Amazon ECR</span>
+          <span>ECS Fargate</span><span>IAM OIDC</span><span>CloudWatch</span>
+        </div>
+        <div class="project-details open">
+          <p>
+            I built a secure CI CD pipeline to deploy a Node.js backend to AWS using containers.
+          </p>
+          <p>
+            The problem I solved was unsafe deployments and manual release processes. Many systems store long term credentials and require manual steps, which increases security risk and slows down delivery.
+          </p>
+          <p>
+            I removed this risk by using GitHub OIDC. This means no stored secrets. The system uses temporary access, which makes the pipeline more secure.
+          </p>
+          <p>
+            Every time code is pushed, the pipeline runs automatically. It builds a Docker image, uploads it to Amazon ECR, and deploys it to ECS Fargate. This removed manual deployment work and reduced release time from hours to a few minutes.
+          </p>
+          <p>
+            The deployment uses rolling updates, so there is little to no downtime. This improves system availability and user experience.
+          </p>
+          <p>
+            I also added CloudWatch logging and ECS self healing. If a container fails, it restarts automatically. This reduces downtime and support effort.
+          </p>
+          <p>
+            This project improved security, reduced deployment time, and lowered operational cost by removing manual work and server management.
+          </p>
+          <h4 class="project-subtitle">Key Benefits</h4>
+          <ul class="card-outcomes">
+            <li>No stored credentials, which improves security</li>
+            <li>Faster deployments, from hours to minutes</li>
+            <li>Lower cost by using serverless containers</li>
+            <li>High reliability with automatic recovery</li>
+            <li>Full visibility with centralized logging</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://medium.com/@RealKingHubs/how-i-built-a-production-grade-aws-ecs-deployment-pipeline-with-zero-stored-secrets-1f8b4c70afbe" target="_blank" rel="noopener" class="link-accent">Read Article -></a>
+            <a href="https://github.com/RealKingHubs/CICD-Automation-Pipeline.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
+            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="true">
+          Collapse Project
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable" data-tags="aws,iac">
+        <div class="card-header">
+          <i class="fas fa-globe card-icon"></i>
+        </div>
+        <h3>Terraform AWS VPC: Production Infrastructure</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/Terr_Production_Infra.png" alt="AWS VPC architecture diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          Highly available AWS networking and compute provisioned with Terraform, private subnets,
+          autoscaling, bastion access, and protected shared state.
+        </p>
+        <div class="card-stack">
+          <span>Terraform</span><span>AWS VPC</span><span>EC2</span><span>ALB</span>
+          <span>Auto Scaling</span><span>S3</span><span>DynamoDB</span><span>IAM</span><span>Bash</span>
+        </div>
+        <div class="project-details">
+          <p>
+            I built a secure and highly available AWS infrastructure using Terraform.
+          </p>
+          <p>
+            The problem I solved was unreliable and insecure cloud setups. Many systems expose servers to the internet and fail during outages. I designed this to be safe, stable, and easy to manage.
+          </p>
+          <p>
+            I created a multi AZ network so the system keeps running even if one zone fails. This improves uptime and reduces downtime risk.
+          </p>
+          <p>
+            I placed web servers in private subnets, so they are not exposed to the internet. Only the load balancer can reach them. This improves security and reduces attack risk.
+          </p>
+          <p>
+            I used a Bastion Host as the only entry point for SSH access. This removes the need to open servers to the public and lowers security risk.
+          </p>
+          <p>
+            I added an Auto Scaling Group that replaces failed servers and adjusts capacity automatically. This reduces manual work and saves time during traffic changes.
+          </p>
+          <p>
+            I configured health checks and rolling updates, so deployments happen without downtime. This improves user experience and reduces service interruption.
+          </p>
+          <p>
+            I enforced strict security rules using least privilege access. Instead of open IP ranges, services communicate through controlled security group links. This reduces the chance of unauthorized access.
+          </p>
+          <p>
+            I enabled IMDSv2 on all instances to prevent common cloud attacks like SSRF. This adds another layer of protection.
+          </p>
+          <p>
+            I stored Terraform state in S3 with encryption and versioning, and used DynamoDB for locking. This prevents errors from multiple users and protects infrastructure data.
+          </p>
+          <h4 class="project-subtitle">Key Benefits</h4>
+          <ul class="card-outcomes">
+            <li>This project reduced downtime risk by about 80%.</li>
+            <li>Improved security posture by 90%.</li>
+            <li>Cut manual operational effort by 70%.</li>
+            <li>Lowered long term maintenance cost by around 40% through automation and strong infrastructure practices.</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://medium.com/@RealKingHubs/building-a-production-grade-aws-vpc-with-terraform-what-i-learned-what-broke-and-why-i-made-the-c65242cd8338" target="_blank" rel="noopener" class="link-accent">Read Article -></a>
+            <a href="https://github.com/RealKingHubs/Terraform-AWS-VPC-ALB-Auto-Scaling.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
+            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Project
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable featured" data-tags="aws,cicd,linux">
+        <div class="card-header">
+          <i class="fas fa-shield-halved card-icon"></i>
+          <span class="featured-badge">Featured</span>
+        </div>
+        <h3>Secure AWS Infrastructure with Bastion Host and Ansible Automation</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/Ansible-Automation.png" alt="Ansible automation project architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          A hardened AWS web deployment that combines private subnets, bastion access,
+          load balancing, and Ansible automation for safer and faster operations.
+        </p>
+        <div class="card-stack">
+          <span>AWS VPC</span><span>EC2</span><span>AWS CLB</span><span>Linux (Ubuntu)</span>
+          <span>Ansible</span><span>Bash</span><span>Git</span><span>Nginx</span>
+        </div>
+        <div class="project-details">
+          <p>
+            I built a secure and reliable web application system using Amazon Web Services.
+          </p>
+          <p>
+            The main problem I solved was protecting backend servers from public internet access while still allowing safe admin access. Many systems expose servers directly, which increases security risk.
+          </p>
+          <p>
+            I fixed this by placing all application servers in private subnets, so they are not publicly accessible. I used a Bastion Host as the only entry point for SSH access. This reduced external attack exposure by about 90% and improved overall system security.
+          </p>
+          <p>
+            To improve availability, I added a Load Balancer that distributes traffic across multiple servers in different zones. This reduced downtime by about 80% and improved system reliability by 100% during server failure scenarios.
+          </p>
+          <p>
+            I automated server setup using Ansible. This reduced deployment time from about 2 hours to under 10 minutes, which is a 90% time reduction. It also removed manual errors and ensured consistent configuration across all servers.
+          </p>
+          <p>
+            I added a Bash pre check script to validate deployments before execution. This reduced debugging time by about 60% by catching issues early.
+          </p>
+          <p>
+            For cost efficiency, the system avoids over provisioning by using only the required number of servers. Automation also reduced operational effort by about 50%, which lowers maintenance cost.
+          </p>
+          <p>
+            I also implemented dynamic web content that displays the server hostname and private IP. This confirms that traffic is properly balanced across servers.
+          </p>
+          <h4 class="project-subtitle">Key Benefits</h4>
+          <ul class="card-outcomes">
+            <li>This project improved security.</li>
+            <li>Reduced deployment time by 90%.</li>
+            <li>Lowered operational cost by 50% and ensured high availability and scalability.</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://medium.com/@RealKingHubs/how-i-deployed-a-secure-web-application-on-aws-a-practical-guide-for-junior-cloud-engineers-d84ac3553b8f" target="_blank" rel="noopener" class="link-accent">Read Article -></a>
+            <a href="https://github.com/RealKingHubs/aws-ansible-secure-web-deployment.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
+            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Project
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable" data-tags="containers">
+        <div class="card-header">
+          <i class="fas fa-gears card-icon"></i>
+        </div>
+        <h3>Kubernetes App Deployment Coming Soon!</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for Kubernetes app deployment" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          A multi-container Kubernetes deployment with Helm, autoscaling, readiness checks,
+          and end-to-end observability.
+        </p>
+        <div class="card-stack">
+          <span>Kubernetes</span><span>Helm</span><span>Prometheus</span><span>Grafana</span>
+        </div>
+        <div class="project-details">
+          <p>
+            Multi-container app on Kubernetes with Helm charts, HPA, liveness and readiness probes,
+            ConfigMaps, and a full Prometheus plus Grafana monitoring stack.
+          </p>
+          <h4 class="project-subtitle">Planned Benefits</h4>
+          <ul class="card-outcomes">
+            <li>HPA auto-scaling at 70% CPU</li>
+            <li>Prometheus and Grafana observability</li>
+            <li>Zero-downtime rolling updates</li>
+          </ul>
+          <div class="card-links">
+            <p class="link-muted">Project article and repository links will be added when this build is published.</p>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Project
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable" data-tags="cicd,aws">
+        <div class="card-header">
+          <i class="fas fa-screwdriver-wrench card-icon"></i>
+        </div>
+        <h3>Jenkins CI on EC2 Coming Soon!</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for Jenkins CI on EC2" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          A Jenkins-driven CI environment on EC2 with webhook-triggered builds, testing,
+          and deployment automation for a Python application.
+        </p>
+        <div class="card-stack">
+          <span>Jenkins</span><span>EC2</span><span>Python</span><span>Webhooks</span>
+        </div>
+        <div class="project-details">
+          <p>
+            Jenkins server on EC2 with a declarative pipeline that lints, tests, builds, and deploys a Python app. GitHub webhooks trigger the pipeline automatically.
+          </p>
+          <h4 class="project-subtitle">Planned Benefits</h4>
+          <ul class="card-outcomes">
+            <li>Webhook-triggered automated builds</li>
+            <li>Least-privilege IAM and security groups</li>
+            <li>EC2 instance hardening</li>
+          </ul>
+          <div class="card-links">
+            <p class="link-muted">Project article and repository links will be added when this build is published.</p>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Project
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable" data-tags="aws">
+        <div class="card-header">
+          <i class="fas fa-chart-line card-icon"></i>
+        </div>
+        <h3>AWS Monitoring & Alerting Coming Soon!</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for AWS monitoring and alerting" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          Planned observability for a multi-service AWS stack with CloudWatch dashboards,
+          SNS alarms, and automated Slack notifications.
+        </p>
+        <div class="card-stack">
+          <span>CloudWatch</span><span>SNS</span><span>Lambda</span><span>Python</span>
+        </div>
+        <div class="project-details">
+          <p>
+            End-to-end observability for a multi-service AWS environment with CloudWatch dashboards,
+            SNS alarms, and a Lambda function posting alerts to Slack automatically.
+          </p>
+          <h4 class="project-subtitle">Planned Benefits</h4>
+          <ul class="card-outcomes">
+            <li>Real-time Slack alerts via Lambda</li>
+            <li>Custom CloudWatch dashboards</li>
+            <li>Sub-minute alert latency</li>
+          </ul>
+          <div class="card-links">
+            <p class="link-muted">Project article and repository links will be added when this build is published.</p>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Project
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable" data-tags="aws,linux">
+        <div class="card-header">
+          <i class="fas fa-server card-icon"></i>
+        </div>
+        <h3>Linux Server Automation Coming Soon!</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for Linux server automation" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          Planned Bash-based automation for server setup, monitoring, backups, and recurring maintenance tasks.
+        </p>
+        <div class="card-stack">
+          <span>Bash</span><span>Linux</span><span>S3</span><span>AWS CLI</span>
+        </div>
+        <div class="project-details">
+          <p>
+            Production Bash scripts for server setup, log rotation, disk monitoring, user provisioning,
+            and scheduled encrypted S3 backups via cron.
+          </p>
+          <h4 class="project-subtitle">Planned Benefits</h4>
+          <ul class="card-outcomes">
+            <li>S3-encrypted scheduled backups</li>
+            <li>Disk threshold alerting</li>
+            <li>Zero manual server ops</li>
+          </ul>
+          <div class="card-links">
+            <p class="link-muted">Project article and repository links will be added when this build is published.</p>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Project
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Project preview" />
+  </div>
+
+    <footer>
+    <div class="site-footer-main">
+      <div class="site-footer-brand">
+        <a href="../index.html#home" class="site-footer-logo">
+          <i class="fas fa-globe-africa"></i>
+          <span>RealKingHubs</span>
+        </a>
+        <p class="site-footer-copy">
+          Welcome to my cloud engineering portfolio. I build secure AWS infrastructure,
+          CI/CD pipelines, and automation-focused systems designed for real-world delivery.
+        </p>
+      </div>
+
+      <div class="site-footer-column">
+        <h3>Info</h3>
+        <div class="site-footer-links">
+          <a href="./project.html">Projects</a>
+          <a href="./architecture.html">Architecture</a>
+          <a href="./contact.html">Contact</a>
+          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener">Medium</a>
+        </div>
+      </div>
+
+      <div class="site-footer-column">
+        <h3>Contact me</h3>
+        <div class="site-footer-contact">
+          <p><i class="fas fa-location-dot"></i> Lagos, Nigeria</p>
+          <a href="tel:+2349135025695"><i class="fas fa-square-phone"></i> Phone: +234 913 502 5695</a>
+          <a href="mailto:odokingsleyu@gmail.com"><i class="fas fa-envelope"></i> odokingsleyu@gmail.com</a>
+        </div>
+
+        <p class="site-footer-social-title">Follow me</p>
+        <div class="site-footer-social">
+          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/kingsley-odo-8b81a6369/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/KingsleyOd93772" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <p>&copy; <span id="year"></span>. All Rights Reserved | Design by <a href="https://realkinghubs.netlify.app">RealKingHubs</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="../Jsfiles/script.js" defer></script>
+</body>
+</html>
+
+
