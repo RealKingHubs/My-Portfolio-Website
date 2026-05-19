@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f6345" />
+      <stop offset="100%" stop-color="#2a7a56" />
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#edf5ef" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.2" />
+    </filter>
+  </defs>
+  
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="140" fill="url(#bgGrad)" />
+  
+  <!-- Cloud Shape -->
+  <path d="M160 360 h192 c44.18 0 80 -35.82 80 -80 c0 -41.4 -31.4 -75.5 -71.8 -79.6 c-8.6 -44.2 -47.6 -78.4 -94.2 -78.4 c-40.4 0 -75.1 24.3 -89.4 59.5 c-7 -2.4 -14.6 -3.5 -22.6 -3.5 c-35.3 0 -64 28.7 -64 64 c0 32.3 23.9 59 55 63.6 c-2.4 4.5 -5 9.2 -5 14.4 c0 22.1 17.9 40 40 40 z" fill="url(#cloudGrad)" filter="url(#shadow)" />
+  
+  <!-- Monogram -->
+  <text x="256" y="290" font-family="'Manrope', -apple-system, sans-serif" font-weight="800" font-size="160" fill="#1f6345" text-anchor="middle" dominant-baseline="central" letter-spacing="-2">RK</text>
+</svg>
