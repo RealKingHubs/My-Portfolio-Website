@@ -25,14 +25,10 @@ navLinks?.querySelectorAll('a').forEach(link => {
 // ----- TYPEWRITER -----
 
 const roles = [
-  'Cloud Engineer.',
-  'DevOps Engineer.',
-  'AWS Infrastructure Builder.',
-  'CI/CD Pipeline Engineer.',
-  'Infrastructure as Code Dev.',
-  'AltSchool Africa Scholar.',
-  'System Administrator.',
-  'Web Developer.',
+  'Cloud & DevOps Engineer.',
+  'CI/CD Pipeline Developer.',
+  'Infrastructure as Code Developer.',
+  'Linux System Administrator.',
 ];
 
 const typeEl = document.getElementById('typing-text');
@@ -220,17 +216,17 @@ function initParticles() {
 
   particlesJS('particles-js', {
     particles: {
-      number:      { value: isSmallScreen ? 22 : 38, density: { enable: true, value_area: 900 } },
-      color:       { value: '#2a7a56' },
-      opacity:     { value: isSmallScreen ? 0.2 : 0.28 },
-      size:        { value: isSmallScreen ? 1.6 : 2, random: true },
-      line_linked: { enable: !isSmallScreen, distance: 140, color: '#2a7a56', opacity: 0.12, width: 1 },
-      move:        { enable: true, speed: isSmallScreen ? 0.45 : 0.7 },
+      number:      { value: isSmallScreen ? 18 : 30, density: { enable: true, value_area: 1100 } },
+      color:       { value: '#7c9485' },
+      opacity:     { value: isSmallScreen ? 0.3 : 0.42, random: true },
+      size:        { value: isSmallScreen ? 1.4 : 1.8, random: true },
+      line_linked: { enable: !isSmallScreen, distance: 155, color: '#7c9485', opacity: 0.16, width: 1 },
+      move:        { enable: true, speed: isSmallScreen ? 0.3 : 0.42 },
     },
     interactivity: {
       detect_on: 'canvas',
       events: { onhover: { enable: !isSmallScreen, mode: 'grab' } },
-      modes:  { grab: { distance: 160, line_linked: { opacity: 0.22 } } },
+      modes:  { grab: { distance: 145, line_linked: { opacity: 0.24 } } },
     },
     retina_detect: true,
   });
