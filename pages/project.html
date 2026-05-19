@@ -112,7 +112,6 @@
           <div class="card-links">
             <a href="https://medium.com/@RealKingHubs/how-i-built-a-production-grade-aws-ecs-deployment-pipeline-with-zero-stored-secrets-1f8b4c70afbe" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
             <a href="https://github.com/RealKingHubs/CICD-Automation-Pipeline.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="true">
@@ -177,7 +176,6 @@
           <div class="card-links">
             <a href="https://medium.com/@RealKingHubs/building-a-production-grade-aws-vpc-with-terraform-what-i-learned-what-broke-and-why-i-made-the-c65242cd8338" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
             <a href="https://github.com/RealKingHubs/Terraform-AWS-VPC-ALB-Auto-Scaling.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="false">
@@ -236,7 +234,6 @@
           <div class="card-links">
             <a href="https://medium.com/@RealKingHubs/how-i-deployed-a-secure-web-application-on-aws-a-practical-guide-for-junior-cloud-engineers-d84ac3553b8f" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
             <a href="https://github.com/RealKingHubs/aws-ansible-secure-web-deployment.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="false">
@@ -251,7 +248,7 @@
         </div>
         <h3>Enterprise AWS High Availability Architecture</h3>
         <div class="project-visual-frame">
-          <img src="../assets/projects/Terr_Production_Infra.png" alt="Enterprise AWS high availability architecture project diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/Enterprise.png" alt="Enterprise AWS high availability architecture project diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
           Designed and deployed a highly available AWS infrastructure using Terraform to automate provisioning, improve reliability, and strengthen security for a web application environment.
@@ -287,9 +284,8 @@
             <li>Improved infrastructure reliability by removing single points of failure.</li>
           </ul>
           <div class="card-links">
-            <a href="https://medium.com/@RealKingHubs/building-a-production-grade-aws-vpc-with-terraform-what-i-learned-what-broke-and-why-i-made-the-c65242cd8338" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
-            <a href="https://github.com/RealKingHubs/Terraform-AWS-VPC-ALB-Auto-Scaling.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
-            <a href="./architecture.html" rel="noopener" class="link-muted">Diagram</a>
+            <a href="https://medium.com/@RealKingHubs/mastering-aws-infrastructure-a-journey-through-terraform-high-availability-b3294618e8db" target="_blank" rel="noopener" class="link-accent">Read Article →</a>
+            <a href="https://github.com/RealKingHubs/-month-one-assessment/tree/main/terraform-assessment" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="false">
@@ -298,34 +294,55 @@
         </button>
       </article>
 
-      <article class="project-card project-card-expandable" data-tags="cicd,aws">
+      <article class="project-card project-card-expandable" data-tags="containers,backend">
         <div class="card-header">
           <i class="fas fa-screwdriver-wrench card-icon"></i>
         </div>
-        <h3>Declarative CI/CD: Jenkins Automation on Hardened EC2 (Coming Soon)</h3>
+        <h3>Containerized Golang API Deployment with Docker and Kubernetes</h3>
         <div class="project-visual-frame">
-          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for Jenkins CI on EC2" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/Golang-kind-cluster-created.png" alt="Containerized Golang API deployment architecture preview" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
-          A highly automated, self-hosted Jenkins CI/CD pipeline on EC2 utilizing declarative pipelines, webhook-triggered builds, code linting, Pytest test suites, and automated staging deployments.
+          Containerized and deployed a Golang backend application with MongoDB using Docker, Docker Compose, and Kubernetes to improve deployment consistency, scalability, and environment management.
         </p>
         <div class="card-stack">
-          <span>Jenkins</span><span>EC2</span><span>Python</span><span>Webhooks</span>
+          <span>Golang</span><span>Docker</span><span>Docker Compose</span><span>Kubernetes</span><span>Kind</span><span>MongoDB</span><span>YAML</span><span>Bash Scripting</span>
         </div>
         <div class="project-details">
           <p>
-            Jenkins server on EC2 with a declarative pipeline that lints, tests, builds, and deploys a Python app. GitHub webhooks trigger the pipeline automatically.
+            The application was previously intended to run directly on servers, which made deployments harder to manage and scale. I modernized the setup by creating a containerized workflow for local development and a Kubernetes deployment for orchestration and service management.
           </p>
-          <h4 class="project-subtitle">Planned Benefits</h4>
+          <p>
+            For local development, I built a multi stage Dockerfile to reduce image size and improve security by running the application as a non root user. I used Docker Compose to manage the backend API and MongoDB services together, including persistent storage, environment variable management, automatic restarts, and internal container networking.
+          </p>
+          <p>
+            To simulate a production style environment, I deployed the application to a local Kubernetes cluster using Kind.
+          </p>
           <ul class="card-outcomes">
-            <li>Webhook-triggered automated builds</li>
-            <li>Least-privilege IAM and security groups</li>
-            <li>EC2 instance hardening</li>
+            <li>MongoDB deployment with persistent storage</li>
+            <li>Backend deployment with multiple replicas</li>
+            <li>ConfigMaps and Secrets for configuration management</li>
+            <li>Liveness and readiness probes for health monitoring</li>
+            <li>Services for internal communication</li>
+            <li>Ingress configuration for external access routing</li>
+          </ul>
+          <p>
+            I also created deployment and cleanup scripts to automate container builds and Kubernetes operations, making the workflow faster and easier to manage.
+          </p>
+          <p>
+            This project improved my understanding of container orchestration, Kubernetes networking, deployment automation, and managing stateful applications inside containerized environments.
+          </p>
+          <h4 class="project-subtitle">Key Benefits</h4>
+          <ul class="card-outcomes">
+            <li>Simplified local development using Docker Compose</li>
+            <li>Improved deployment consistency across environments</li>
+            <li>Added scalability through Kubernetes replica management</li>
+            <li>Improved application reliability using health checks and self healing deployments</li>
+            <li>Reduced manual deployment work with automation scripts</li>
           </ul>
           <div class="card-links">
-            <span class="link-accent">Read Article →</span>
-            <span class="link-muted"><i class="fab fa-github"></i> GitHub</span>
-            <span class="link-muted">Diagram</span>
+            <span class="link-accent"><a href="https://medium.com/@RealKingHubs/how-i-containerized-a-go-app-without-losing-my-mind-or-breaking-the-code-0096c08619fc" target="_blank" rel="noopener">Read Article →</a></span>
+            <span class="link-muted"><a href="https://github.com/RealKingHubs/starttech-application/tree/main/Container-Assessment" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></span>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="false">
@@ -362,7 +379,6 @@
           <div class="card-links">
             <span class="link-accent">Read Article →</span>
             <span class="link-muted"><i class="fab fa-github"></i> GitHub</span>
-            <span class="link-muted">Diagram</span>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="false">
@@ -399,7 +415,6 @@
           <div class="card-links">
             <span class="link-accent">Read Article →</span>
             <span class="link-muted"><i class="fab fa-github"></i> GitHub</span>
-            <span class="link-muted">Diagram</span>
           </div>
         </div>
         <button class="project-toggle-btn" type="button" aria-expanded="false">
