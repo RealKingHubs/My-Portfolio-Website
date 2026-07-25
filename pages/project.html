@@ -21,7 +21,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="../index.html#home">Home</a></li>
         <li><a href="./project.html">Projects</a></li>
-        <li><a href="./architecture.html">Architecture</a></li>
+        <li><a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener noreferrer">Blog</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
       <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu">
@@ -63,13 +63,160 @@
     </div>
 
     <div class="project-grid project-grid-library">
-      <article class="project-card project-card-expandable featured is-open" data-tags="aws,cicd,containers">
+      <article class="project-card project-card-expandable featured is-open" data-tags="aws,cicd,containers,iac,linux">
+        <div class="card-header">
+          <i class="fas fa-cubes card-icon"></i>
+          <span class="featured-badge">Featured</span>
+        </div>
+        <h3>Production-Grade Drupal Platform on AWS with Full DevOps Automation</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/drupal_devops_platform.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/drupal/drupalalb.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/drupal/grafana1.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/drupal/ansible.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/drupal/elk2.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/drupal/drupalk8s.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+          <img src="../assets/projects/drupal/grafana2.png" alt="Drupal DevOps Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          Production-grade Drupal 11 platform on AWS using a complete DevOps toolchain, featuring Terraform IaC, secure Ansible deployment via SSM, Kubernetes orchestration, and automated GitHub Actions OIDC CI/CD.
+        </p>
+        <div class="card-stack">
+          <span>Terraform</span><span>AWS</span><span>Ansible</span><span>Docker</span>
+          <span>Kubernetes</span><span>GitHub Actions</span><span>OIDC</span><span>Prometheus</span>
+          <span>ELK Stack</span><span>AWS SSM</span>
+        </div>
+        <div class="project-details open">
+          <p>
+            I built a production-grade Drupal 11 platform on AWS using a complete DevOps toolchain, with infrastructure automation, secure deployments, monitoring, and centralized logging.
+          </p>
+          <p>
+            The problem I solved was the complexity of managing a highly available web application across multiple servers while maintaining security, automation, and operational visibility. Traditional environments often rely on manual configuration, SSH access, and inconsistent deployment processes, which increase risk and maintenance effort.
+          </p>
+          <p>
+            I provisioned the entire AWS environment using Terraform, including a multi-AZ VPC, Auto Scaling Group, Application Load Balancer, RDS MySQL with a read replica, S3 storage, and CloudWatch billing alerts. Everything was deployed through code with no manual infrastructure setup.
+          </p>
+          <p>
+            For server management, I used Ansible with AWS Systems Manager instead of SSH. This removed the need for SSH keys, bastion hosts, and public access to servers. All configuration and deployments were performed through secure SSM connections.
+          </p>
+          <p>
+            I containerized Drupal using Docker and deployed it to a Kubernetes cluster for local orchestration and testing. The platform included persistent storage, Kubernetes deployments, services, ingress routing, secrets management, and horizontal pod autoscaling.
+          </p>
+          <p>
+            To automate releases, I built a GitHub Actions CI/CD pipeline using OIDC authentication. This removed the need for long-lived AWS credentials. Every code change automatically triggers image builds, testing, staging deployment, smoke tests, and production deployment with an approval gate.
+          </p>
+          <p>
+            I also implemented full observability using Prometheus, Grafana, and the ELK Stack. Metrics from EC2, Nginx, RDS, and the load balancer were collected and visualized through Grafana dashboards, while centralized log aggregation made troubleshooting faster and easier.
+          </p>
+          <p>
+            The platform was designed for high availability and resilience. It runs across two availability zones, automatically replaces failed instances, scales based on CPU utilization, and includes health checks, monitoring alerts, and database redundancy.
+          </p>
+          <p>
+            This project improved security, automated infrastructure management, reduced deployment effort, and provided complete visibility into application and infrastructure health.
+          </p>
+          <h4 class="project-subtitle">Key Benefits</h4>
+          <ul class="card-outcomes">
+            <li>Fully automated infrastructure provisioning with Terraform</li>
+            <li>No SSH access or stored credentials through AWS SSM and GitHub OIDC</li>
+            <li>Automated CI/CD pipeline with testing, staging, and production approval flow</li>
+            <li>High availability across multiple AWS Availability Zones</li>
+            <li>Auto Scaling for increased traffic and workload demand</li>
+            <li>Centralized monitoring with Prometheus and Grafana</li>
+            <li>Centralized logging with ELK Stack and Filebeat</li>
+            <li>Secure network segmentation and least-privilege IAM design</li>
+            <li>Faster troubleshooting through real-time metrics and log analysis</li>
+            <li>Complete Infrastructure as Code and configuration management approach</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://medium.com/@RealKingHubs/-a395767ca9fa" target="_blank" rel="noopener" class="link-accent">Read Article &rarr;</a>
+            <a href="https://github.com/RealKingHubs/drupal-app-to-aws-production" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="true">
+          Collapse Project
+          <i class="fas fa-chevron-up"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable featured" data-tags="aws,cicd,containers,iac">
+        <div class="card-header">
+          <i class="fas fa-network-wired card-icon"></i>
+          <span class="featured-badge">Featured</span>
+        </div>
+        <h3>Production-Grade AWS EKS Platform for a Microservices Retail Application</h3>
+        <div class="project-visual-frame">
+          <img src="../assets/projects/diagram_aws_eks_retail.svg" alt="AWS EKS Platform Architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
+        </div>
+        <p class="project-lead">
+          Production-grade Kubernetes platform on AWS hosting a cloud-native retail application, featuring Terraform infrastructure automation, Helm deployments, managed RDS/DynamoDB databases, and AWS Lambda event-driven processing.
+        </p>
+        <div class="card-stack">
+          <span>Terraform</span><span>Amazon EKS</span><span>Kubernetes</span><span>Helm</span>
+          <span>Amazon RDS</span><span>DynamoDB</span><span>AWS Lambda</span><span>Amazon S3</span>
+          <span>GitHub Actions</span><span>OIDC</span><span>CloudWatch</span>
+        </div>
+        <div class="project-details">
+          <p>
+            I built a production-grade Kubernetes platform on AWS for InnovateMart Inc. to host a cloud-native retail application using Amazon EKS, managed databases, automated deployments, centralized logging, and serverless event processing.
+          </p>
+          <p>
+            The problem I solved was deploying and managing the Retail Store microservices application in a secure and scalable environment. Running databases inside Kubernetes clusters can create operational challenges, while manual deployments and limited visibility make production systems harder to maintain.
+          </p>
+          <p>
+            I provisioned the entire infrastructure using Terraform, including a multi-AZ VPC (<strong>project-bedrock-vpc</strong>), an Amazon EKS cluster (<strong>project-bedrock-cluster</strong>), managed node groups, RDS databases, DynamoDB tables, IAM roles, networking components, and remote state management. Everything was deployed through Infrastructure as Code (IaC) in the <code>us-east-1</code> region.
+          </p>
+          <p>
+            The application consisted of multiple microservices running in the EKS cluster within the <code>retail-app</code> namespace. Instead of using in-cluster databases, I migrated the data layer to managed AWS services. MySQL and PostgreSQL workloads were moved to Amazon RDS, while the cart service used DynamoDB. This improved reliability, reduced operational overhead, and followed cloud-native best practices.
+          </p>
+          <p>
+            To securely expose the application, I deployed the AWS Load Balancer Controller and configured an Application Load Balancer through Kubernetes Ingress. This provided external access to the application while keeping worker nodes and databases in private subnets.
+          </p>
+          <p>
+            I implemented secure developer access by creating a dedicated IAM user (<strong>bedrock-dev-view</strong>) with read-only AWS console access and Kubernetes RBAC mapping to the <code>view</code> ClusterRole. This allowed developers to troubleshoot pods and view resources in the <code>retail-app</code> namespace without administrative privileges.
+          </p>
+          <p>
+            For observability, I enabled EKS control plane logging and configured CloudWatch container logging. This provided centralized visibility into both Kubernetes operations and application activity.
+          </p>
+          <p>
+            I also built a serverless asset-processing workflow using Amazon S3 (<strong>bedrock-assets-[student-id]</strong>) and an AWS Lambda function (<strong>bedrock-asset-processor</strong>). Whenever files are uploaded to the assets bucket, the Lambda function automatically triggers and logs the filename to CloudWatch, enabling event-driven processing.
+          </p>
+          <p>
+            To automate infrastructure changes, I created a GitHub Actions CI/CD pipeline using OIDC authentication. Pull requests automatically generate Terraform plans for review, while approved changes to the main branch trigger Terraform deployments. This removed the need for long-lived AWS credentials and improved deployment security.
+          </p>
+          <p>
+            This project improved infrastructure automation, strengthened security, simplified application operations, and provided a scalable foundation for running microservices on Kubernetes.
+          </p>
+          <h4 class="project-subtitle">Key Benefits</h4>
+          <ul class="card-outcomes">
+            <li>Fully automated AWS infrastructure using Terraform</li>
+            <li>Production-ready Amazon EKS deployment across multiple Availability Zones</li>
+            <li>Managed RDS and DynamoDB services replacing in-cluster databases</li>
+            <li>Secure Kubernetes access with IAM and RBAC controls</li>
+            <li>No long-lived AWS credentials through GitHub OIDC authentication</li>
+            <li>Automated CI/CD pipeline with Terraform plan and apply workflows</li>
+            <li>Centralized logging with CloudWatch for both cluster and application logs</li>
+            <li>Event-driven file processing with S3 and Lambda</li>
+            <li>Private networking for worker nodes and databases</li>
+            <li>Scalable and cloud-native microservices architecture suitable for production workloads</li>
+          </ul>
+          <div class="card-links">
+            <a href="https://github.com/RealKingHubs/retail-store-sample-app" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Details
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </article>
+
+      <article class="project-card project-card-expandable featured" data-tags="aws,cicd,containers">
         <div class="card-header">
           <i class="fas fa-rocket card-icon"></i>
           <span class="featured-badge">Featured</span>
         </div>
         <h3>Zero-Secret GitOps: CI/CD Pipeline for AWS ECS Fargate</h3>
         <div class="project-visual-frame">
+          <img src="../assets/projects/diagram_zero_secret_gitops.png" alt="Zero-Secret GitOps Workflow Diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
           <img src="../assets/projects/Zero-secret-CICD_ECS.png" alt="CI/CD Pipeline screenshot" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
@@ -79,7 +226,7 @@
           <span>GitHub Actions</span><span>Docker</span><span>Amazon ECR</span>
           <span>ECS Fargate</span><span>IAM OIDC</span><span>CloudWatch</span>
         </div>
-        <div class="project-details open">
+        <div class="project-details">
           <p>
             I built a secure CI CD pipeline to deploy a Node.js backend to AWS using containers.
           </p>
@@ -114,9 +261,9 @@
             <a href="https://github.com/RealKingHubs/CICD-Automation-Pipeline.git" target="_blank" rel="noopener" class="link-muted"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-        <button class="project-toggle-btn" type="button" aria-expanded="true">
-          Collapse Project
-          <i class="fas fa-chevron-up"></i>
+        <button class="project-toggle-btn" type="button" aria-expanded="false">
+          Expand Details
+          <i class="fas fa-chevron-down"></i>
         </button>
       </article>
 
@@ -126,6 +273,7 @@
         </div>
         <h3>Production-Grade AWS VPC: Multi-AZ Network via Terraform</h3>
         <div class="project-visual-frame">
+          <img src="../assets/projects/diagram_aws_vpc_terraform.png" alt="AWS VPC Architecture Diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
           <img src="../assets/projects/Terr_Production_Infra.png" alt="AWS VPC architecture diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
@@ -191,6 +339,7 @@
         </div>
         <h3>Hardened AWS Web Deployment: Ansible Server Configuration</h3>
         <div class="project-visual-frame">
+          <img src="../assets/projects/diagram_ansible_server_config.svg" alt="Ansible Configuration & Hardening Workflow" class="project-img zoomable-img" loading="lazy" decoding="async" />
           <img src="../assets/projects/Ansible-Automation.png" alt="Ansible automation project architecture" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
@@ -248,6 +397,7 @@
         </div>
         <h3>Enterprise AWS High Availability Architecture</h3>
         <div class="project-visual-frame">
+          <img src="../assets/projects/diagram_aws_high_availability.png" alt="Enterprise AWS High Availability Architecture Diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
           <img src="../assets/projects/Enterprise.png" alt="Enterprise AWS high availability architecture project diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
@@ -300,6 +450,7 @@
         </div>
         <h3>Containerized Golang API Deployment with Docker and Kubernetes</h3>
         <div class="project-visual-frame">
+          <img src="../assets/projects/diagram_golang_k8s.png" alt="Containerized Golang API Kubernetes Deployment Diagram" class="project-img zoomable-img" loading="lazy" decoding="async" />
           <img src="../assets/projects/Golang-kind-cluster-created.png" alt="Containerized Golang API deployment architecture preview" class="project-img zoomable-img" loading="lazy" decoding="async" />
         </div>
         <p class="project-lead">
@@ -350,78 +501,6 @@
           <i class="fas fa-chevron-down"></i>
         </button>
       </article>
-
-      <article class="project-card project-card-expandable" data-tags="aws">
-        <div class="card-header">
-          <i class="fas fa-chart-line card-icon"></i>
-        </div>
-        <h3>Cloud Observability: Enterprise AWS Monitoring & SNS Alerting (Coming Soon)</h3>
-        <div class="project-visual-frame">
-          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for AWS monitoring and alerting" class="project-img zoomable-img" loading="lazy" decoding="async" />
-        </div>
-        <p class="project-lead">
-          End-to-end cloud monitoring and observability using Amazon CloudWatch, SNS topics, and AWS Lambda to deliver real-time system health alerts directly to Slack.
-        </p>
-        <div class="card-stack">
-          <span>CloudWatch</span><span>SNS</span><span>Lambda</span><span>Python</span>
-        </div>
-        <div class="project-details">
-          <p>
-            End-to-end observability for a multi-service AWS environment with CloudWatch dashboards,
-            SNS alarms, and a Lambda function posting alerts to Slack automatically.
-          </p>
-          <h4 class="project-subtitle">Planned Benefits</h4>
-          <ul class="card-outcomes">
-            <li>Real-time Slack alerts via Lambda</li>
-            <li>Custom CloudWatch dashboards</li>
-            <li>Sub-minute alert latency</li>
-          </ul>
-          <div class="card-links">
-            <span class="link-accent">Read Article →</span>
-            <span class="link-muted"><i class="fab fa-github"></i> GitHub</span>
-          </div>
-        </div>
-        <button class="project-toggle-btn" type="button" aria-expanded="false">
-          Expand Project
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </article>
-
-      <article class="project-card project-card-expandable" data-tags="aws,linux">
-        <div class="card-header">
-          <i class="fas fa-server card-icon"></i>
-        </div>
-        <h3>Infrastructure Control: Bash-Driven Linux Server Automation (Coming Soon)</h3>
-        <div class="project-visual-frame">
-          <img src="../assets/projects/demo-placeholder.svg" alt="Demo placeholder for Linux server automation" class="project-img zoomable-img" loading="lazy" decoding="async" />
-        </div>
-        <p class="project-lead">
-          SRE-focused systems automation using shell scripting to handle zero-manual server setup, automated cron backups to encrypted S3 buckets, and proactive disk threshold alerts.
-        </p>
-        <div class="card-stack">
-          <span>Bash</span><span>Linux</span><span>S3</span><span>AWS CLI</span>
-        </div>
-        <div class="project-details">
-          <p>
-            Production Bash scripts for server setup, log rotation, disk monitoring, user provisioning,
-            and scheduled encrypted S3 backups via cron.
-          </p>
-          <h4 class="project-subtitle">Planned Benefits</h4>
-          <ul class="card-outcomes">
-            <li>S3-encrypted scheduled backups</li>
-            <li>Disk threshold alerting</li>
-            <li>Zero manual server ops</li>
-          </ul>
-          <div class="card-links">
-            <span class="link-accent">Read Article →</span>
-            <span class="link-muted"><i class="fab fa-github"></i> GitHub</span>
-          </div>
-        </div>
-        <button class="project-toggle-btn" type="button" aria-expanded="false">
-          Expand Project
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </article>
     </div>
   </section>
 
@@ -447,7 +526,6 @@
         <h3>Info</h3>
         <div class="site-footer-links">
           <a href="./project.html">Projects</a>
-          <a href="./architecture.html">Architecture</a>
           <a href="./contact.html">Contact</a>
           <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener">GitHub</a>
           <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener">Medium</a>

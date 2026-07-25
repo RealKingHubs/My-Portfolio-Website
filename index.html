@@ -1,223 +1,376 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RealKingHubs portfolio showcasing cloud engineering, AWS architecture, CI/CD automation, and infrastructure projects." />
-  <title>RealKingHubs | Cloud Engineer</title>
-  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="cssfile/style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RealKingHubs portfolio showcasing cloud engineering, AWS architecture, CI/CD automation, and infrastructure projects."
+    />
+    <title>RealKingHubs | Cloud Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="cssfile/style.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
 
-  <div id="particles-js"></div>
+    <header id="header">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="https://realkinghubs.netlify.app"
+            >RealKi<span>ngHubs</span></a
+          >
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="pages/project.html">Projects</a></li>
+          <li>
+            <a
+              href="https://medium.com/@RealKingHubs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Blog</a
+            >
+          </li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
 
-  <header id="header">
-    <nav class="navbar">
-      <div class="logo"><a href="https://realkinghubs.netlify.app">RealKi<span>ngHubs</span></a></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="pages/project.html">Projects</a></li>
-        <li><a href="pages/architecture.html">Architecture</a></li>
-        <li><a href="pages/contact.html">Contact</a></li>
-      </ul>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </nav>
-  </header>
-
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <p class="hero-tag">AltSchool Africa - Cloud Engineering</p>
-      <h1>Hello, I'm <span>Odo Kingsley Uchenna</span></h1>
-      <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
-      <p class="hero-bio">
-      Building secure and automated cloud infrastructure using AWS and DevOps tools.
-      </p>
-      <div class="hero-buttons">
-        <a href="pages/project.html" class="btn primary">View Projects</a>
-        <a href="pages/contact.html" class="btn secondary">Hire Me</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="about section">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-container">
-      <div class="about-image">
-        <img src="assets/images/white_tech.png" alt="Kingsley Uchenna Odo" loading="lazy" decoding="async" />
-        <div class="img-border"></div>
-      </div>
-
-      <div class="about-text">
-        <p class="about-lead">
-          Hi, I'm <strong>Kingsley Uchenna Odo</strong>, a Cloud and DevOps Engineer with a
-          strong interest in building secure, reliable, and automated infrastructure on AWS.
-        </p>
-        <div class="about-copy">
-          <p>
-            I enjoy working on systems that improve deployment speed, reduce manual work, and
-            increase reliability. My experience includes Infrastructure as Code with Terraform,
-            CI/CD pipelines, Linux administration, containerization, and cloud networking.
-          </p>
-          <p>
-            I like building environments that are practical, scalable, and easy to maintain rather
-            than overly complex solutions.
-          </p>
-          <p>
-            Right now, I'm looking for a <strong>Cloud or DevOps role</strong> where I can
-            contribute to real production environments, continue improving my engineering skills,
-            and grow as part of a strong technical team.
-          </p>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <div class="hero-status-badge">
+          <span class="status-dot"></span>
+          <span class="status-text"
+            >Available for Cloud &amp; DevOps Roles</span
+          >
+          <span class="status-divider">•</span>
+          <span class="status-tag">AltSchool Africa</span>
         </div>
 
-        <ul class="about-details">
-          <li><i class="fas fa-map-marker-alt"></i> <span>Ogun, Nigeria</span></li>
-          <li><i class="fas fa-graduation-cap"></i> <span>AltSchool Africa - Cloud Engineering</span></li>
-          <li><i class="fas fa-circle-dot"></i> <span>Cloud or DevOps role, available immediately</span></li>
-        </ul>
+        <h1 class="hero-title">
+          Hello, I'm <span class="highlight-name">Odo Kingsley Uchenna</span>
+        </h1>
 
-        <div class="about-actions">
-          <a href="pages/contact.html" class="btn secondary">Let's Talk</a>
-          <a href="assets/resume/Odo_Kingsley_Resume_v1.1.pdf" download class="btn primary">
-            <i class="fas fa-download"></i> Download Resume
+        <div class="hero-subtitle">
+          <span class="subtitle-prefix">Specializing as</span>
+          <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
+        </div>
+
+        <p class="hero-bio">
+          Building secure, resilient, and automated cloud infrastructure on AWS
+          using modern Infrastructure as Code &amp; CI/CD practices.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="pages/project.html" class="btn primary btn-hero">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right icon-arrow"></i>
+          </a>
+          <a href="pages/contact.html" class="btn secondary btn-hero">
+            <i class="fas fa-paper-plane"></i>
+            <span>Get in Touch</span>
           </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="skills" class="skills section">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <i class="fas fa-cloud"></i>
-          <h3>AWS & Cloud</h3>
-        </div>
-        <div class="skill-row"><span>AWS & Cloud Architecture</span><span class="skill-pct">82%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-width="82"></div></div>
-        <div class="skill-tags">
-          <span>EC2</span><span>S3</span><span>ECS</span><span>ECR</span>
-          <span>IAM</span><span>VPC</span><span>CloudWatch</span>
+        <div class="hero-tech-pills">
+          <span class="tech-pill"><i class="fab fa-aws"></i> AWS</span>
+          <span class="tech-pill"><i class="fas fa-cubes"></i> Terraform</span>
+          <span class="tech-pill"><i class="fas fa-[#]"></i> Ansible</span>
+          <span class="tech-pill"><i class="fab fa-docker"></i> Docker</span>
+          <span class="tech-pill"
+            ><i class="fas fa-dharmachakra"></i> Kubernetes</span
+          >
+          <span class="tech-pill"
+            ><i class="fab fa-github"></i> CI/CD Pipeline</span
+          >
         </div>
       </div>
+    </section>
 
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <i class="fab fa-docker"></i>
-          <h3>Containers</h3>
+    <section id="about" class="about section">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-container">
+        <div class="about-image">
+          <img
+            src="assets/images/white_tech.png"
+            alt="Kingsley Uchenna Odo"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="img-border"></div>
         </div>
-        <div class="skill-row"><span>Docker & Kubernetes</span><span class="skill-pct">80%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
-        <div class="skill-tags">
-          <span>Docker</span><span>Kubernetes</span><span>Helm</span><span>ECR</span>
+
+        <div class="about-text">
+          <p class="about-lead">
+            Hi, I'm <strong>Kingsley Uchenna Odo</strong>
+          </p>
+          <div class="about-copy">
+            <p>
+              Award winning Cloud Engineer specializing in building secure AWS
+              infrastructure, automating manual configuration tasks, and keeping
+              systems highly available. Recognized as the Overall Best Learner
+              in the School of Engineering and the Best Learner in Cloud
+              Engineering. Skilled at shifting outdated manual configurations
+              into resilient, automated cloud setups and finding root causes
+              during live production outages.
+            </p>
+
+            <p>
+              Right now, I'm looking for a
+              <strong>Cloud or DevOps role</strong> where I can contribute to
+              real production environments, continue improving my engineering
+              skills, and grow as part of a strong technical team.
+            </p>
+          </div>
+
+          <ul class="about-details">
+            <li>
+              <i class="fas fa-map-marker-alt"></i> <span>Ogun, Nigeria</span>
+            </li>
+            <li>
+              <i class="fas fa-graduation-cap"></i>
+              <span>AltSchool Africa - Cloud Engineering</span>
+            </li>
+            <li>
+              <i class="fas fa-circle-dot"></i>
+              <span>Cloud or DevOps role, available immediately</span>
+            </li>
+          </ul>
+
+          <div class="about-actions">
+            <a href="pages/contact.html" class="btn secondary">Let's Talk</a>
+            <a
+              href="assets/resume/Odo_Kingsley_Resume_v1.1.pdf"
+              download
+              class="btn primary"
+            >
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fas fa-cloud"></i>
+            <h3>AWS & Cloud</h3>
+          </div>
+          <div class="skill-row">
+            <span>AWS & Cloud Architecture</span
+            ><span class="skill-pct">82%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="82"></div>
+          </div>
+          <div class="skill-tags">
+            <span>EC2</span><span>S3</span><span>ECS</span><span>ECR</span>
+            <span>IAM</span><span>VPC</span><span>CloudWatch</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fab fa-docker"></i>
+            <h3>Containers</h3>
+          </div>
+          <div class="skill-row">
+            <span>Docker & Kubernetes</span><span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="80"></div>
+          </div>
+          <div class="skill-tags">
+            <span>Docker</span><span>Kubernetes</span><span>Helm</span
+            ><span>ECR</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fas fa-code-branch"></i>
+            <h3>CI/CD</h3>
+          </div>
+          <div class="skill-row">
+            <span>GitHub Actions & Jenkins</span
+            ><span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="85"></div>
+          </div>
+          <div class="skill-tags">
+            <span>GitHub Actions</span><span>Jenkins</span><span>OIDC</span
+            ><span>Webhooks</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fas fa-cubes"></i>
+            <h3>Infrastructure as Code</h3>
+          </div>
+          <div class="skill-row">
+            <span>Terraform</span><span class="skill-pct">72%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="72"></div>
+          </div>
+          <div class="skill-tags">
+            <span>Terraform</span><span>HCL</span><span>Remote State</span
+            ><span>Modules</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fas fa-terminal"></i>
+            <h3>Linux & Scripting</h3>
+          </div>
+          <div class="skill-row">
+            <span>Linux & Bash</span><span class="skill-pct">78%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="78"></div>
+          </div>
+          <div class="skill-tags">
+            <span>Linux</span><span>Bash</span><span>Python</span
+            ><span>Cron</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fas fa-chart-line"></i>
+            <h3>Monitoring</h3>
+          </div>
+          <div class="skill-row">
+            <span>CloudWatch & Grafana</span><span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-track">
+            <div class="skill-fill" data-width="70"></div>
+          </div>
+          <div class="skill-tags">
+            <span>CloudWatch</span><span>Grafana</span><span>Prometheus</span
+            ><span>SNS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <a href="#home" class="site-footer-logo">
+            <i class="fas fa-globe-africa"></i>
+            <span>RealKingHubs</span>
+          </a>
+          <p class="site-footer-copy">
+            Welcome to my cloud engineering portfolio. I build secure AWS
+            infrastructure, CI/CD pipelines, and automation-focused systems
+            designed for real-world delivery.
+          </p>
+        </div>
+
+        <div class="site-footer-column">
+          <h3>Info</h3>
+          <div class="site-footer-links">
+            <a href="pages/project.html">Projects</a>
+            <a href="pages/contact.html">Contact</a>
+            <a
+              href="https://github.com/RealKingHubs"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a
+              href="https://medium.com/@RealKingHubs"
+              target="_blank"
+              rel="noopener"
+              >Medium</a
+            >
+          </div>
+        </div>
+
+        <div class="site-footer-column">
+          <h3>Contact me</h3>
+          <div class="site-footer-contact">
+            <p><i class="fas fa-location-dot"></i> Ogun, Nigeria</p>
+            <a href="tel:+2349135025695"
+              ><i class="fas fa-square-phone"></i> Phone: +234 913 502 5695</a
+            >
+            <a href="mailto:odokingsleyu@gmail.com"
+              ><i class="fas fa-envelope"></i> odokingsleyu@gmail.com</a
+            >
+          </div>
+
+          <p class="site-footer-social-title">Follow me</p>
+          <div class="site-footer-social">
+            <a
+              href="https://github.com/RealKingHubs"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/kingsley-odo-8b81a6369/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              href="https://x.com/KingsleyOd93772"
+              target="_blank"
+              rel="noopener"
+              aria-label="X"
+              ><i class="fab fa-x-twitter"></i
+            ></a>
+            <a
+              href="https://medium.com/@RealKingHubs"
+              target="_blank"
+              rel="noopener"
+              aria-label="Medium"
+              ><i class="fab fa-medium-m"></i
+            ></a>
+          </div>
         </div>
       </div>
 
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <i class="fas fa-code-branch"></i>
-          <h3>CI/CD</h3>
-        </div>
-        <div class="skill-row"><span>GitHub Actions & Jenkins</span><span class="skill-pct">85%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
-        <div class="skill-tags">
-          <span>GitHub Actions</span><span>Jenkins</span><span>OIDC</span><span>Webhooks</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <i class="fas fa-cubes"></i>
-          <h3>Infrastructure as Code</h3>
-        </div>
-        <div class="skill-row"><span>Terraform</span><span class="skill-pct">72%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-width="72"></div></div>
-        <div class="skill-tags">
-          <span>Terraform</span><span>HCL</span><span>Remote State</span><span>Modules</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <i class="fas fa-terminal"></i>
-          <h3>Linux & Scripting</h3>
-        </div>
-        <div class="skill-row"><span>Linux & Bash</span><span class="skill-pct">78%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
-        <div class="skill-tags">
-          <span>Linux</span><span>Bash</span><span>Python</span><span>Cron</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <i class="fas fa-chart-line"></i>
-          <h3>Monitoring</h3>
-        </div>
-        <div class="skill-row"><span>CloudWatch & Grafana</span><span class="skill-pct">70%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-width="70"></div></div>
-        <div class="skill-tags">
-          <span>CloudWatch</span><span>Grafana</span><span>Prometheus</span><span>SNS</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="site-footer-main">
-      <div class="site-footer-brand">
-        <a href="#home" class="site-footer-logo">
-          <i class="fas fa-globe-africa"></i>
-          <span>RealKingHubs</span>
-        </a>
-        <p class="site-footer-copy">
-          Welcome to my cloud engineering portfolio. I build secure AWS infrastructure,
-          CI/CD pipelines, and automation-focused systems designed for real-world delivery.
+      <div class="site-footer-bottom">
+        <p>
+          &copy; <span id="year"></span>. All Rights Reserved | Design by
+          <a href="https://realkinghubs.netlify.app">RealKingHubs</a>
         </p>
       </div>
+    </footer>
 
-      <div class="site-footer-column">
-        <h3>Info</h3>
-        <div class="site-footer-links">
-          <a href="pages/project.html">Projects</a>
-          <a href="pages/architecture.html">Architecture</a>
-          <a href="pages/contact.html">Contact</a>
-          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener">Medium</a>
-        </div>
-      </div>
-
-      <div class="site-footer-column">
-        <h3>Contact me</h3>
-        <div class="site-footer-contact">
-          <p><i class="fas fa-location-dot"></i> Ogun, Nigeria</p>
-          <a href="tel:+2349135025695"><i class="fas fa-square-phone"></i> Phone: +234 913 502 5695</a>
-          <a href="mailto:odokingsleyu@gmail.com"><i class="fas fa-envelope"></i> odokingsleyu@gmail.com</a>
-        </div>
-
-        <p class="site-footer-social-title">Follow me</p>
-        <div class="site-footer-social">
-          <a href="https://github.com/RealKingHubs" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/kingsley-odo-8b81a6369/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://x.com/KingsleyOd93772" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://medium.com/@RealKingHubs" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-footer-bottom">
-      <p>&copy; <span id="year"></span>. All Rights Reserved | Design by <a href="https://realkinghubs.netlify.app">RealKingHubs</a></p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-  <script src="Jsfiles/script.js" defer></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+      defer
+    ></script>
+    <script src="Jsfiles/script.js" defer></script>
+  </body>
 </html>

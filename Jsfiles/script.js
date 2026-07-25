@@ -243,3 +243,77 @@ if ('requestIdleCallback' in window) {
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+// ----- CAROUSEL SCROLL NAVIGATION -----
+
+document.querySelectorAll('.project-visual-frame').forEach(frame => {
+  const images = frame.querySelectorAll('.project-img');
+  if (images.length > 1) {
+    // Create wrapper to contain the frame and buttons (so buttons don't scroll)
+    const wrapper = document.createElement('div');
+    wrapper.className = 'project-visual-wrapper';
+    frame.parentNode.insertBefore(wrapper, frame);
+    wrapper.appendChild(frame);
+
+    // Create buttons
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-arrow prev';
+    prevBtn.type = 'button';
+    prevBtn.innerHTML = '❮';
+    prevBtn.setAttribute('aria-label', 'Previous image');
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-arrow next';
+    nextBtn.type = 'button';
+    nextBtn.innerHTML = '❯';
+    nextBtn.setAttribute('aria-label', 'Next image');
+
+    wrapper.appendChild(prevBtn);
+    wrapper.appendChild(nextBtn);
+
+    // Arrow visibility management
+    const updateArrows = () => {
+      const scrollLeft = frame.scrollLeft;
+      const maxScroll = frame.scrollWidth - frame.clientWidth;
+      
+      // Hide left arrow at the beginning
+      if (scrollLeft <= 5) {
+        prevBtn.classList.add('hidden');
+      } else {
+        prevBtn.classList.remove('hidden');
+      }
+      
+      // Hide right arrow at the end (only if layout is fully rendered with maxScroll > 0)
+      if (maxScroll > 5 && scrollLeft >= maxScroll - 5) {
+        nextBtn.classList.add('hidden');
+      } else {
+        nextBtn.classList.remove('hidden');
+      }
+    };
+
+    // Scroll event listeners
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent triggering full image zoom modal
+      frame.scrollBy({ left: -frame.clientWidth, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent triggering full image zoom modal
+      frame.scrollBy({ left: frame.clientWidth, behavior: 'smooth' });
+    });
+
+    frame.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+
+    // Recalculate arrow visibility once each image loads
+    images.forEach(img => {
+      img.addEventListener('load', updateArrows);
+    });
+
+    // Run initial checks
+    updateArrows();
+    setTimeout(updateArrows, 100);
+    setTimeout(updateArrows, 500);
+  }
+});
