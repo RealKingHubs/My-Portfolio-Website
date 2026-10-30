@@ -1,6 +1,6 @@
 /* =============================================================
    RealKingHubs — style.css
-   Colors : #0f172a · #1e293b · #2a3f5f · #38bdf8
+   Colors : sage #eef2ef · forest green #2a7a56 · deep green #1f6345 · white #ffffff
    Font   : Manrope
 ============================================================= */
 
@@ -1588,7 +1588,7 @@ footer {
   place-items: center;
   border-radius: 50%;
   background: rgba(90, 163, 127, 0.14);
-  color: var(--accent-soft);
+  color: var(--green);
   font-size: 22px;
 }
 
@@ -2482,3 +2482,105 @@ body.certificate-modal-open { overflow: hidden; }
   .experience-card { padding: 22px 18px; }
   .experience-card-head { flex-direction: column; gap: 10px; }
 }
+
+
+/* ----- BRAND COLORS ACROSS ALL PAGES ----- */
+
+.tech-pill i.fa-aws,
+.skill-card-head i.fa-aws { color: #ff9900; }
+
+
+.tech-pill i.fa-docker,
+.skill-card-head i.fa-docker { color: #2496ed; }
+
+
+
+
+.tech-pill i.fa-github,
+.social-links a > i.fa-github { color: #24292f; }
+
+.skill-card-head i.fa-wordpress { color: #21759b; }
+
+.social-links a > i.fa-linkedin,
+.social-links a > i.fa-linkedin-in { color: #0a66c2; }
+
+.social-links a > i.fa-x-twitter { color: #000000; }
+.social-links a > i.fa-medium,
+.social-links a > i.fa-medium-m { color: #000000; }
+
+.site-footer-social a > i.fa-github,
+.site-footer-social a > i.fa-x-twitter,
+.site-footer-social a > i.fa-medium,
+.site-footer-social a > i.fa-medium-m { color: #ffffff; }
+
+.site-footer-social a > i.fa-linkedin,
+.site-footer-social a > i.fa-linkedin-in { color: #0a66c2; }
+
+
+/* ----- CONTACT AND PROJECT ICON BRAND COLORS ----- */
+
+/* Contact page social tiles */
+.social-links a > i.fa-github {
+  color: #24292f;
+  background: rgba(36, 41, 47, 0.08);
+}
+
+.social-links a > i.fa-linkedin,
+.social-links a > i.fa-linkedin-in {
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
+}
+
+.social-links a > i.fa-medium,
+.social-links a > i.fa-medium-m,
+.social-links a > i.fa-x-twitter {
+  color: #111111;
+  background: rgba(17, 17, 17, 0.07);
+}
+
+.social-links a > i.fa-blog {
+  color: #2962ff;
+  background: rgba(41, 98, 255, 0.1);
+}
+
+/* Contact details and footer contact icons */
+.site-footer-contact i.fa-location-dot,
+.site-footer-contact i.fa-map-marker-alt { color: #ea4335; }
+.site-footer-contact i.fa-square-phone,
+.site-footer-contact i.fa-phone { color: #34a853; }
+.site-footer-contact i.fa-envelope { color: #4285f4; }
+
+/* Project repository links */
+.link-muted i.fa-github { color: #24292f; }
+
+
+/* Category and contact icon colors */
+.skill-card-head i.brand-linux { color: #334155; }
+.skill-card-head i.brand-monitoring { color: #f46800; }
+
+.social-links a > i.brand-phone {
+  color: #25a55b;
+  background: rgba(37, 165, 91, 0.1);
+}
+
+.social-links a > i.brand-email {
+  color: #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+}
+
+
+
+/* Self-hosted brand marks for technology labels and project cards */
+.brand-mark {
+  display: inline-block;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.brand-mark-small { width: 18px; height: 18px; }
+.brand-mark-skill { width: 21px; height: 21px; }
+.brand-mark-project { width: 34px; height: 34px; }
+
+.tech-pill .brand-mark-small { margin-right: 0; }
+.project-card .brand-mark-project { transition: transform 0.35s ease; }
+.project-card:hover .brand-mark-project { transform: translateY(-2px) scale(1.04); }
