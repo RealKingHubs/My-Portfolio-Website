@@ -205,6 +205,59 @@ document.addEventListener('keydown', e => {
 });
 
 
+// ----- CERTIFICATE POPUP -----
+
+const certificateModal = document.getElementById('certificateModal');
+const certificateModalImage = certificateModal?.querySelector('.certificate-modal-image');
+const certificateModalClose = certificateModal?.querySelector('.certificate-modal-close');
+const certificateModalZoom = certificateModal?.querySelector('.certificate-modal-zoom');
+let certificateTrigger = null;
+
+function setCertificateZoom(zoomed) {
+  certificateModal?.classList.toggle('is-zoomed', zoomed);
+  certificateModalZoom?.setAttribute('aria-pressed', String(zoomed));
+  if (certificateModalZoom) certificateModalZoom.textContent = zoomed ? 'Fit to screen' : 'Zoom in';
+  if (certificateModal) certificateModal.scrollTop = 0;
+  if (certificateModal) certificateModal.scrollLeft = 0;
+}
+
+function closeCertificateModal() {
+  if (!certificateModal) return;
+  certificateModal.classList.remove('show');
+  certificateModal.setAttribute('aria-hidden', 'true');
+  setCertificateZoom(false);
+  document.body.classList.remove('certificate-modal-open');
+  if (certificateModalImage) certificateModalImage.removeAttribute('src');
+  certificateTrigger?.focus();
+}
+
+document.querySelectorAll('.certificate-popup-trigger').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    if (!certificateModal || !certificateModalImage) return;
+    certificateTrigger = link;
+    setCertificateZoom(false);
+    certificateModalImage.src = link.dataset.preview || link.href;
+    certificateModalImage.alt = link.querySelector('img')?.alt || 'Certificate preview';
+    certificateModal.classList.add('show');
+    certificateModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('certificate-modal-open');
+    certificateModalClose?.focus();
+  });
+});
+
+certificateModalClose?.addEventListener('click', closeCertificateModal);
+certificateModalZoom?.addEventListener('click', () => {
+  setCertificateZoom(!certificateModal?.classList.contains('is-zoomed'));
+});
+certificateModal?.addEventListener('click', event => {
+  if (event.target === certificateModal) closeCertificateModal();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && certificateModal?.classList.contains('show')) closeCertificateModal();
+});
+
+
 // ----- PARTICLES.JS -----
 
 const particlesRoot = document.getElementById('particles-js');
