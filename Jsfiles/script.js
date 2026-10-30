@@ -26,6 +26,7 @@ navLinks?.querySelectorAll('a').forEach(link => {
 
 const roles = [
   'Cloud & DevOps Engineer.',
+  'Azure DevOps Engineer.',
   'CI/CD Pipeline Developer.',
   'Infrastructure as Code Developer.',
   'Linux System Administrator.',
