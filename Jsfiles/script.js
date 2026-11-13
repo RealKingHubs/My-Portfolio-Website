@@ -12,14 +12,56 @@ const body       = document.body;
 menuToggle?.addEventListener('click', () => {
   navLinks.classList.toggle('open');
   body.classList.toggle('menu-open', navLinks.classList.contains('open'));
+  menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('open')));
+  menuToggle.setAttribute('aria-label', navLinks.classList.contains('open') ? 'Close navigation menu' : 'Open navigation menu');
 });
 
 navLinks?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
     body.classList.remove('menu-open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation menu');
   });
 });
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape' || !navLinks?.classList.contains('open')) return;
+  navLinks.classList.remove('open');
+  body.classList.remove('menu-open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.setAttribute('aria-label', 'Open navigation menu');
+  menuToggle?.focus();
+});
+
+// Keep the shared navigation useful on every page and show the active location.
+const navAnchors = [...(navLinks?.querySelectorAll('a') || [])];
+function setCurrentNav(id) {
+  navAnchors.forEach(link => {
+    const homePaths = ['/', '/index.html'];
+    const samePage = link.pathname === window.location.pathname || (homePaths.includes(link.pathname) && homePaths.includes(window.location.pathname));
+    const active = link.hash === `#${id}` && samePage;
+    if (active) link.setAttribute('aria-current', 'location');
+    else if (link.getAttribute('aria-current') === 'location') link.removeAttribute('aria-current');
+    link.classList.toggle('active', active);
+  });
+}
+const path = window.location.pathname;
+if (path.endsWith('/project.html')) {
+  const projectsLink = navAnchors.find(link => link.href.endsWith('/project.html'));
+  projectsLink?.setAttribute('aria-current', 'page');
+  projectsLink?.classList.add('active');
+} else if (path.endsWith('/contact.html')) {
+  const contactLink = navAnchors.find(link => link.href.endsWith('/contact.html'));
+  contactLink?.setAttribute('aria-current', 'page');
+  contactLink?.classList.add('active');
+} else {
+  const sectionObserver = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setCurrentNav(visible.target.id);
+  }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.2, 0.5] });
+  document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+}
 
 
 // ----- TYPEWRITER -----
@@ -35,9 +77,12 @@ const roles = [
 const typeEl = document.getElementById('typing-text');
 
 if (typeEl) {
+  const reduceTypingMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceTypingMotion) typeEl.textContent = roles[0];
+  else {
   let roleIndex = 0;
-  let charIndex = 0;
-  let deleting  = false;
+  let charIndex = roles[0].length;
+  let deleting  = true;
 
   function type() {
     const word = roles[roleIndex];
@@ -62,7 +107,9 @@ if (typeEl) {
     setTimeout(type, delay);
   }
 
-  setTimeout(type, 800);
+  typeEl.textContent = roles[0];
+  setTimeout(type, 2400);
+  }
 }
 
 
@@ -111,22 +158,9 @@ if (!motionReduced) {
 }
 
 
-// ----- SKILL BAR ANIMATION -----
-
-const skillFills = document.querySelectorAll('.skill-fill');
-
-if (skillFills.length) {
-  const barObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const width = entry.target.getAttribute('data-width');
-      setTimeout(() => { entry.target.style.width = width + '%'; }, 150);
-      barObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.4 });
-
-  skillFills.forEach(fill => barObserver.observe(fill));
-}
+// Keep the copyright year current while retaining a usable HTML fallback.
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();
 
 
 // ----- PROJECT FILTER -----
@@ -167,6 +201,13 @@ document.querySelectorAll('.project-toggle-btn').forEach(btn => {
       : 'Expand Project <i class="fas fa-chevron-down"></i>';
   });
 });
+
+const linkedProject = window.location.hash && document.getElementById(window.location.hash.slice(1));
+if (linkedProject?.classList.contains('project-card-expandable')) {
+  const toggle = linkedProject.querySelector('.project-toggle-btn');
+  if (toggle?.getAttribute('aria-expanded') !== 'true') toggle?.click();
+  window.setTimeout(() => linkedProject.scrollIntoView({ behavior: motionReduced ? 'auto' : 'smooth', block: 'start' }), 0);
+}
 
 
 // ----- ARCHITECTURE VIEW MORE -----
@@ -256,7 +297,40 @@ certificateModal?.addEventListener('click', event => {
 });
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && certificateModal?.classList.contains('show')) closeCertificateModal();
+  if (event.key !== 'Tab' || !certificateModal?.classList.contains('show')) return;
+  const controls = [...certificateModal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), [tabindex]:not([tabindex="-1"])')];
+  if (!controls.length) return;
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
 });
+
+// Defer the award video download until its explicit play action.
+const awardVideo = document.querySelector('.award-video-frame video');
+const awardVideoSource = awardVideo?.querySelector('source[data-src]');
+const awardVideoPlay = document.querySelector('.award-video-play');
+awardVideoPlay?.addEventListener('click', async () => {
+  if (!awardVideo || !awardVideoSource) return;
+  awardVideo.controls = true;
+  if (!awardVideoSource.src) {
+    awardVideoSource.src = awardVideoSource.dataset.src;
+    awardVideo.load();
+  }
+  try {
+    await awardVideo.play();
+    awardVideoPlay.hidden = true;
+  } catch {
+    awardVideoPlay.hidden = false;
+  }
+});
+awardVideo?.addEventListener('pause', () => { if (!awardVideo.ended && awardVideo.currentTime > 0 && awardVideoPlay) awardVideoPlay.hidden = false; });
+awardVideo?.addEventListener('ended', () => { if (awardVideoPlay) awardVideoPlay.hidden = false; });
 
 
 // ----- PARTICLES.JS -----

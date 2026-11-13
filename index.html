@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://realkinghubs.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kingsley Uchenna Odo | Cloud &amp; DevOps Engineer" />
+    <meta property="og:description" content="Cloud and DevOps engineering portfolio featuring AWS, Azure, CI/CD, automation, and infrastructure projects." />
+    <meta property="og:url" content="https://realkinghubs.netlify.app/" />
+    <meta property="og:image" content="https://realkinghubs.netlify.app/assets/images/Blue-pic.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kingsley Uchenna Odo | Cloud &amp; DevOps Engineer" />
+    <meta name="twitter:description" content="Cloud and DevOps engineering portfolio featuring AWS, Azure, CI/CD, automation, and infrastructure projects." />
+    <meta name="twitter:image" content="https://realkinghubs.netlify.app/assets/images/Blue-pic.png" />
     <meta
       name="description"
       content="RealKingHubs portfolio showcasing AWS and Azure cloud engineering, Azure DevOps, CI/CD automation, and infrastructure projects."
     />
-    <title>RealKingHubs | Cloud &amp; DevOps Engineer</title>
+    <title>Kingsley Uchenna Odo | Cloud &amp; DevOps Engineer</title>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kingsley Uchenna Odo",
+      "jobTitle": "Cloud & DevOps Engineer",
+      "url": "https://realkinghubs.netlify.app/",
+      "image": "https://realkinghubs.netlify.app/assets/images/Blue-pic.png",
+      "sameAs": [
+        "https://github.com/RealKingHubs",
+        "https://www.linkedin.com/in/kingsley-odo-8b81a6369/",
+        "https://medium.com/@RealKingHubs",
+        "https://x.com/KingsleyOd93772"
+      ]
+    }</script>
     <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,6 +46,7 @@
     <link rel="stylesheet" href="cssfile/style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div id="particles-js"></div>
 
     <header id="header">
@@ -32,11 +57,11 @@
           >
         </div>
         <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
+          <li><a href="/#home">Home</a></li>
           <li><a href="pages/project.html">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#skills">Skills</a></li>
+          <li><a href="/#certificates">Certificates</a></li>
           <li>
             <a
               href="https://medium.com/@RealKingHubs"
@@ -52,12 +77,14 @@
           id="menuToggle"
           type="button"
           aria-label="Open navigation menu"
+          aria-expanded="false"
         >
           <i class="fas fa-bars"></i>
         </button>
       </nav>
     </header>
 
+    <main id="main-content" tabindex="-1">
     <section id="home" class="hero">
       <div class="hero-content">
         <div class="hero-status-badge">
@@ -65,17 +92,15 @@
           <span class="status-text"
             >Cloud &amp; DevOps Engineer</span
           >
-          <span class="status-divider">•</span>
-          <span class="status-tag">AltSchool Africa</span>
         </div>
 
         <h1 class="hero-title">
-          Hello, I'm <span class="highlight-name">Odo Kingsley Uchenna</span>
+          Hello, I'm <span class="highlight-name">Kingsley Uchenna Odo</span>
         </h1>
 
         <div class="hero-subtitle">
-          <span class="subtitle-prefix">Specializing as</span>
-          <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
+          <span class="subtitle-prefix">Cloud &amp; DevOps Engineer</span>
+          <h2><span id="typing-text">Azure and AWS Infrastructure</span><span class="cursor" aria-hidden="true">|</span></h2>
         </div>
 
         <p class="hero-bio">
@@ -110,6 +135,47 @@
       </div>
     </section>
 
+    <section id="featured-projects" class="projects section featured-projects">
+      <div class="project-section-head">
+        <p class="certificate-eyebrow">Selected work</p>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="projects-page-copy">A few examples of cloud platforms and delivery workflows I have built.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <img class="card-icon brand-mark brand-mark-project" src="assets/brands/terraform.svg" alt="" aria-hidden="true" />
+          <h3>Production Drupal Platform on AWS</h3>
+          <p class="project-lead">Automated a highly available Drupal platform with secure deployments, monitoring, and centralized logs.</p>
+          <div class="card-stack"><span>AWS</span><span>Terraform</span><span>Ansible</span><span>GitHub Actions</span><span>Kubernetes</span></div>
+          <div class="card-links">
+            <a href="https://github.com/RealKingHubs/drupal-app-to-aws-production" target="_blank" rel="noopener noreferrer" class="link-muted"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+            <a href="https://medium.com/@RealKingHubs/-a395767ca9fa" target="_blank" rel="noopener noreferrer" class="link-accent">Project write-up <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <img class="card-icon brand-mark brand-mark-project" src="assets/brands/kubernetes.svg" alt="" aria-hidden="true" />
+          <h3>AWS EKS Retail Microservices Platform</h3>
+          <p class="project-lead">Provisioned an EKS application platform with managed data services, Helm releases, and event-driven processing.</p>
+          <div class="card-stack"><span>Amazon EKS</span><span>Terraform</span><span>Helm</span><span>RDS</span><span>DynamoDB</span></div>
+          <div class="card-links">
+            <a href="https://github.com/RealKingHubs/retail-store-sample-app" target="_blank" rel="noopener noreferrer" class="link-muted"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+            <a href="pages/project.html#aws-eks-retail" class="link-accent">Project write-up <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <i class="fab fa-github card-icon" aria-hidden="true"></i>
+          <h3>Zero-Secret AWS CI/CD Pipeline</h3>
+          <p class="project-lead">Built an automated ECS release pipeline using GitHub OIDC to avoid long-lived AWS credentials.</p>
+          <div class="card-stack"><span>AWS ECS</span><span>GitHub Actions</span><span>OIDC</span><span>Docker</span></div>
+          <div class="card-links">
+            <a href="https://github.com/RealKingHubs/CICD-Automation-Pipeline" target="_blank" rel="noopener noreferrer" class="link-muted"><i class="fab fa-github" aria-hidden="true"></i> Repository</a>
+            <a href="https://medium.com/@RealKingHubs/how-i-built-a-production-grade-aws-ecs-deployment-pipeline-with-zero-stored-secrets-1f8b4c70afbe" target="_blank" rel="noopener noreferrer" class="link-accent">Project write-up <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+      <p class="featured-projects-more"><a href="pages/project.html" class="btn secondary">Browse all projects</a></p>
+    </section>
+
     <section id="about" class="about section">
       <h2 class="section-title">About Me</h2>
       <div class="about-container">
@@ -134,8 +200,7 @@
               Azure DevOps release pipelines, Azure Container Registry
               maintenance, and cloud monitoring. I also bring hands-on AWS
               experience with Terraform, GitHub Actions, containers, and
-              production operations. Recognized as AltSchool Africa’s Best
-              Graduating Learner and Best Learner in Cloud Engineering.
+              production operations.
             </p>
 
             <p>
@@ -145,6 +210,11 @@
               Insights and Log Analytics. I enjoy making releases safer,
               operations clearer, and cloud platforms easier to maintain.
             </p>
+            <ul class="about-highlights">
+              <li>Reduced Drupal deployment time from hours to under three minutes.</li>
+              <li>Recognized as AltSchool Africa's Best Graduating Learner in Cloud Engineering.</li>
+              <li>Based in Ogun, Nigeria (WAT); open to remote opportunities.</li>
+            </ul>
           </div>
 
           <ul class="about-details">
@@ -164,7 +234,7 @@
           <div class="about-actions">
             <a href="pages/contact.html" class="btn secondary">Let's Talk</a>
             <a
-              href="assets/resume/cv/Cloud_DevOps_CV.pdf"
+              href="assets/resume/cv/Odo_Kingsley_Cloud_DevOps_CV_1.pdf"
               download
               class="btn primary"
             >
@@ -177,243 +247,6 @@
 
 
 
-    <section id="certificates" class="certificates section">
-      <div class="certificate-section-head">
-        <p class="certificate-eyebrow">Learning &amp; Recognition</p>
-        <h2 class="section-title">Certificates &amp; Awards</h2>
-        <p class="certificate-intro">
-          A few milestones from my journey in cloud engineering, DevOps, and software development.
-         
-        </p>
-      </div>
-      <div class="certificate-grid">
-        <article class="certificate-card">
-          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/it-infrastructure-devops.pdf" data-preview="assets/certificates/it-infrastructure-devops.png" aria-label="View IT Infrastructure and DevOps certificate (PDF)">
-            <img src="assets/certificates/it-infrastructure-devops.png" alt="IT Infrastructure and DevOps certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
-            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View certificate</span>
-          </a>
-          <div class="certificate-card-copy"><h3>IT Infrastructure &amp; DevOps</h3><p>Bincom Academy</p></div>
-        </article>
-        <article class="certificate-card">
-          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/altschool-africa.pdf" data-preview="assets/certificates/altschool-africa.png" aria-label="View AltSchool Africa certificate (PDF)">
-            <img src="assets/certificates/altschool-africa.png" alt="AltSchool Africa certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
-            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View certificate</span>
-          </a>
-          <div class="certificate-card-copy"><h3>AltSchool Africa</h3><p>Cloud Engineering · Karatu Class of 2026</p></div>
-        </article>
-        <article class="certificate-card">
-          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/best-graduating-learner.jpg" aria-label="View Best Graduating Learner award image">
-            <img src="assets/certificates/best-graduating-learner.jpg" alt="Best Graduating Learner award presented to Kingsley Uchenna Odo by AltSchool Africa" loading="lazy" decoding="async" />
-            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View image</span>
-          </a>
-          <div class="certificate-card-copy"><h3>Best Graduating Learner</h3><p>AltSchool Africa · School of Engineering · 2026</p></div>
-        </article>
-        <article class="certificate-card">
-          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/best-learner-cloud-engineering.jpg" aria-label="View Best Learner award image">
-            <img src="assets/certificates/best-learner-cloud-engineering.jpg" alt="Best Learner award presented to Kingsley Uchenna Odo by AltSchool Africa" loading="lazy" decoding="async" />
-            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View image</span>
-          </a>
-          <div class="certificate-card-copy"><h3>Best Learner — Cloud Engineering</h3><p>AltSchool Africa · School of Engineering · 2026</p></div>
-        </article>
-        <article class="certificate-card">
-          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/cloud-devops-ai-bootcamp.pdf" data-preview="assets/certificates/cloud-devops-ai-bootcamp.png" aria-label="View Cloud DevOps with AI Bootcamp certificate (PDF)">
-            <img src="assets/certificates/cloud-devops-ai-bootcamp.png" alt="Cloud and DevOps with AI Bootcamp certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
-            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View certificate</span>
-          </a>
-          <div class="certificate-card-copy"><h3>Cloud &amp; DevOps with AI Bootcamp</h3><p>Professional development</p></div>
-        </article>
-        <article class="certificate-card">
-          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/frontend-development.pdf" data-preview="assets/certificates/frontend-development.png" aria-label="View Front-End Development certificate (PDF)">
-            <img src="assets/certificates/frontend-development.png" alt="Front-End Development certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
-            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View certificate</span>
-          </a>
-          <div class="certificate-card-copy"><h3>Front-End Development</h3><p>Professional development</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="award-video" class="award-video section">
-      <div class="certificate-section-head">
-        <p class="certificate-eyebrow">A proud moment</p>
-        <h2 class="section-title">Best Learner Recognition</h2>
-        <p class="certificate-intro">
-          A moment celebrating my Best Learner recognition at AltSchool Africa.
-        </p>
-      </div>
-      <div class="award-video-frame">
-        <video
-          controls
-          playsinline
-          preload="metadata"
-          poster="assets/certificates/best-learner-cloud-engineering.jpg"
-          aria-label="Best Learner recognition video"
-        >
-          <source src="assets/videos/best-learner.mp4" type="video/mp4" />
-          Your browser does not support HTML video. Please update your browser to watch this clip.
-        </video>
-      </div>
-    </section>
-
-    <section id="skills" class="skills section">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <i class="fab fa-aws"></i>
-            <h3>Amazon Web Service</h3>
-          </div>
-          <div class="skill-row">
-            <span>AWS Cloud Service</span
-            ><span class="skill-pct">82%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="82"></div>
-          </div>
-          <div class="skill-tags">
-            <span>EC2</span><span>S3</span><span>ECS</span><span>ECR</span>
-            <span>IAM</span><span>VPC</span><span>CloudWatch</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <img class="brand-mark brand-mark-skill" src="assets/brands/azure.svg" alt="" aria-hidden="true" />
-            <h3>Microsoft Azure</h3>
-          </div>
-          <div class="skill-row">
-            <span>Azure Cloud Services</span><span class="skill-pct">78%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="78"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Azure App Service</span><span>Container Registry</span>
-            <span>Azure DevOps</span><span>Bicep</span>
-            <span>Application Insights</span><span>Log Analytics</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <i class="fab fa-docker"></i>
-            <h3>Containers</h3>
-          </div>
-          <div class="skill-row">
-            <span>Docker & Kubernetes</span><span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="80"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Docker</span><span>Kubernetes</span><span>Helm</span
-            ><span>ECR</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <img class="brand-mark brand-mark-skill" src="assets/brands/azure-devops.svg" alt="" aria-hidden="true" />
-            <h3>CI/CD</h3>
-          </div>
-          <div class="skill-row">
-            <span>Azure DevOps &amp; GitHub Actions</span
-            ><span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="85"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Azure DevOps</span><span>GitHub Actions</span><span>GitLab CI</span><span>OIDC</span><span>Semantic Versioning</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <img class="brand-mark brand-mark-skill" src="assets/brands/terraform.svg" alt="" aria-hidden="true" />
-            <h3>Infrastructure as Code</h3>
-          </div>
-          <div class="skill-row">
-            <span>Terraform</span><span class="skill-pct">72%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="72"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Terraform</span><span>Bicep</span><span>HCL</span>
-            <span>Remote State</span><span>Modules</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <img class="brand-mark brand-mark-skill" src="assets/brands/ansible.svg" alt="" aria-hidden="true" />
-            <h3>Configuration Management</h3>
-          </div>
-          <div class="skill-row">
-            <span>Ansible</span><span class="skill-pct">78%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="78"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Ansible</span><span>Playbooks</span><span>Roles</span>
-            <span>Idempotent Automation</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <i class="fab fa-linux brand-linux" aria-hidden="true"></i>
-            <h3>Linux & Scripting</h3>
-          </div>
-          <div class="skill-row">
-            <span>Linux & Bash</span><span class="skill-pct">78%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="78"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Linux</span><span>Bash</span><span>Python</span
-            ><span>Cron</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <i class="fab fa-wordpress"></i>
-            <h3>WordPress &amp; Web Design</h3>
-          </div>
-          <div class="skill-row">
-            <span>WordPress Website Design</span><span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="75"></div>
-          </div>
-          <div class="skill-tags">
-            <span>WordPress</span><span>Website Design</span>
-            <span>Responsive Layouts</span>
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-card-head">
-            <i class="fas fa-chart-line brand-monitoring"></i>
-            <h3>Monitoring</h3>
-          </div>
-          <div class="skill-row">
-            <span>CloudWatch & Grafana</span><span class="skill-pct">70%</span>
-          </div>
-          <div class="skill-track">
-            <div class="skill-fill" data-width="70"></div>
-          </div>
-          <div class="skill-tags">
-            <span>Application Insights</span><span>Log Analytics</span>
-            <span>CloudWatch</span><span>Grafana</span><span>Prometheus</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="experience" class="experience section">
       <div class="experience-section-head">
            <h2 class="section-title">Cloud &amp; DevOps Experience</h2>
@@ -425,7 +258,7 @@
               <p class="experience-company">Preferred Digital Business Solutions</p>
               <h3>DevOps Engineer</h3>
             </div>
-            <span class="experience-date">Aug 2026 — Present</span>
+            <span class="experience-date">Aug 2026 to Present</span>
           </div>
           <ul class="experience-highlights">
             <li>Maintain Azure DevOps CI/CD workflows for Android and iOS delivery, resolve release blockers, and support deployments to internal testing tracks.</li>
@@ -445,7 +278,7 @@
               <p class="experience-company">Bincom Dev Center</p>
               <h3>Cloud &amp; DevOps Engineer Apprentice</h3>
             </div>
-            <span class="experience-date">May 2026 — Aug 2026</span>
+            <span class="experience-date">May 2026 to Aug 2026</span>
           </div>
           <ul class="experience-highlights">
             <li>Reduced Drupal deployment time from hours to under three minutes with a GitHub Actions pipeline using OIDC authentication.</li>
@@ -459,6 +292,204 @@
         </article>
       </div>
     </section>
+
+    <section id="skills" class="skills section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fab fa-aws"></i>
+            <h3>Amazon Web Services</h3>
+          </div>
+          <p class="skill-proof">Built the Drupal AWS platform across multiple Availability Zones, with private RDS, shared EFS, and server access through Systems Manager with no open SSH ports.</p>
+          <div class="skill-tags">
+            <span>EC2</span><span>S3</span><span>ECS</span><span>ECR</span>
+            <span>IAM</span><span>VPC</span><span>CloudWatch</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <img class="brand-mark brand-mark-skill" src="assets/brands/azure.svg" alt="" aria-hidden="true" />
+            <h3>Microsoft Azure</h3>
+          </div>
+          <p class="skill-proof">Automated cleanup of ACR images older than 30 days and added image lock/unlock protection; maintained Azure DevOps pipelines for mobile and web releases.</p>
+          <div class="skill-tags">
+            <span>Azure App Service</span><span>Container Registry</span>
+            <span>Azure DevOps</span><span>Bicep</span>
+            <span>Application Insights</span><span>Log Analytics</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fab fa-docker"></i>
+            <h3>Containers</h3>
+          </div>
+          <p class="skill-proof">Used Docker Compose with Ansible to cut server setup from hours to under two minutes; containerized Drupal and deployed it to Kubernetes for orchestration.</p>
+          <div class="skill-tags">
+            <span>Docker</span><span>Kubernetes</span><span>Helm</span
+            ><span>ECR</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <img class="brand-mark brand-mark-skill" src="assets/brands/azure-devops.svg" alt="" aria-hidden="true" />
+            <h3>CI/CD</h3>
+          </div>
+          <p class="skill-proof">Built a GitHub Actions OIDC pipeline that cut Drupal releases from hours to under three minutes; supported mobile delivery pipelines in Azure DevOps.</p>
+          <div class="skill-tags">
+            <span>Azure DevOps</span><span>GitHub Actions</span><span>GitLab CI</span><span>OIDC</span><span>Semantic Versioning</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <img class="brand-mark brand-mark-skill" src="assets/brands/terraform.svg" alt="" aria-hidden="true" />
+            <h3>Infrastructure as Code</h3>
+          </div>
+          <p class="skill-proof">Provisioned multi-AZ AWS infrastructure with Terraform and configured remote state in S3 with DynamoDB locking.</p>
+          <div class="skill-tags">
+            <span>Terraform</span><span>Bicep</span><span>HCL</span>
+            <span>Remote State</span><span>Modules</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <img class="brand-mark brand-mark-skill" src="assets/brands/ansible.svg" alt="" aria-hidden="true" />
+            <h3>Configuration Management</h3>
+          </div>
+          <p class="skill-proof">Created Ansible playbooks for consistent server configuration; paired them with Docker Compose to reduce setup from hours to under two minutes.</p>
+          <div class="skill-tags">
+            <span>Ansible</span><span>Playbooks</span><span>Roles</span>
+            <span>Idempotent Automation</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fab fa-linux brand-linux" aria-hidden="true"></i>
+            <h3>Linux & Scripting</h3>
+          </div>
+          <p class="skill-proof">Diagnosed a production outage from database resource exhaustion and disk pressure using logs and system metrics, then restored service through host resizing and database tuning.</p>
+          <div class="skill-tags">
+            <span>Linux</span><span>Bash</span><span>Python</span
+            ><span>Cron</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fab fa-wordpress"></i>
+            <h3>WordPress &amp; Web Design</h3>
+          </div>
+          <p class="skill-proof">Design and build WordPress websites with responsive page layouts.</p>
+          <div class="skill-tags">
+            <span>WordPress</span><span>Website Design</span>
+            <span>Responsive Layouts</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-head">
+            <i class="fas fa-chart-line brand-monitoring"></i>
+            <h3>Monitoring</h3>
+          </div>
+          <p class="skill-proof">Centralized application and system logs in ELK over secure SSM tunnels to reduce troubleshooting time; used Grafana and Prometheus for monitoring.</p>
+          <div class="skill-tags">
+            <span>Application Insights</span><span>Log Analytics</span>
+            <span>CloudWatch</span><span>Grafana</span><span>Prometheus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="certificates section">
+      <div class="certificate-section-head">
+        <p class="certificate-eyebrow">Learning &amp; Recognition</p>
+        <h2 class="section-title">Certificates &amp; Awards</h2>
+        <p class="certificate-intro">
+          A few milestones from my journey in cloud engineering, DevOps, and software development.
+
+        </p>
+      </div>
+      <p class="certificate-intro certificate-pdf-note">Selecting a PDF certificate opens its preview in a popup.</p>
+      <div class="certificate-grid">
+        <article class="certificate-card">
+          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/it-infrastructure-devops.pdf" data-preview="assets/certificates/it-infrastructure-devops.png" aria-label="View IT Infrastructure and DevOps certificate (PDF opens in a preview)">
+            <img src="assets/certificates/it-infrastructure-devops.png" width="1200" height="850" alt="IT Infrastructure and DevOps certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
+            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View PDF certificate (opens in preview)</span>
+          </a>
+          <div class="certificate-card-copy"><h3>IT Infrastructure &amp; DevOps</h3><p>Bincom Academy</p></div>
+        </article>
+        <article class="certificate-card">
+          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/altschool-africa.pdf" data-preview="assets/certificates/altschool-africa.png" aria-label="View AltSchool Africa certificate (PDF opens in a preview)">
+            <img src="assets/certificates/altschool-africa.png" width="1200" height="850" alt="AltSchool Africa certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
+            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View PDF certificate (opens in preview)</span>
+          </a>
+          <div class="certificate-card-copy"><h3>AltSchool Africa</h3><p>Cloud Engineering · Karatu Class of 2026</p></div>
+        </article>
+        <article class="certificate-card">
+          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/best-graduating-learner.jpg" aria-label="View Best Graduating Learner award image">
+            <img src="assets/certificates/best-graduating-learner.jpg" width="1200" height="850" alt="Best Graduating Learner award presented to Kingsley Uchenna Odo by AltSchool Africa" loading="lazy" decoding="async" />
+            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View image</span>
+          </a>
+          <div class="certificate-card-copy"><h3>Best Graduating Learner</h3><p>AltSchool Africa · School of Engineering · 2026</p></div>
+        </article>
+        <article class="certificate-card">
+          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/best-learner-cloud-engineering.jpg" aria-label="View Best Learner award image">
+            <img src="assets/certificates/best-learner-cloud-engineering.jpg" width="1200" height="850" alt="Best Learner award presented to Kingsley Uchenna Odo by AltSchool Africa" loading="lazy" decoding="async" />
+            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View image</span>
+          </a>
+          <div class="certificate-card-copy"><h3>Best Learner in Cloud Engineering</h3><p>AltSchool Africa · School of Engineering · 2026</p></div>
+        </article>
+        <article class="certificate-card">
+          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/cloud-devops-ai-bootcamp.pdf" data-preview="assets/certificates/cloud-devops-ai-bootcamp.png" aria-label="View Cloud DevOps with AI Bootcamp certificate (PDF opens in a preview)">
+            <img src="assets/certificates/cloud-devops-ai-bootcamp.png" width="1200" height="850" alt="Cloud and DevOps with AI Bootcamp certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
+            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View PDF certificate (opens in preview)</span>
+          </a>
+          <div class="certificate-card-copy"><h3>Cloud &amp; DevOps with AI Bootcamp</h3><p>Professional development</p></div>
+        </article>
+        <article class="certificate-card">
+          <a class="certificate-image-link certificate-popup-trigger" href="assets/certificates/frontend-development.pdf" data-preview="assets/certificates/frontend-development.png" aria-label="View Front-End Development certificate (PDF opens in a preview)">
+            <img src="assets/certificates/frontend-development.png" width="1200" height="850" alt="Front-End Development certificate awarded to Kingsley Uchenna Odo" loading="lazy" decoding="async" />
+            <span class="certificate-view"><i class="fas fa-up-right-from-square" aria-hidden="true"></i> View PDF certificate (opens in preview)</span>
+          </a>
+          <div class="certificate-card-copy"><h3>Front-End Development</h3><p>Professional development</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="award-video" class="award-video section">
+      <div class="certificate-section-head">
+        <p class="certificate-eyebrow">A proud moment</p>
+        <h2 class="section-title">Best Learner Recognition</h2>
+        <p class="certificate-intro">
+          A moment celebrating my Best Learner recognition at AltSchool Africa.
+        </p>
+      </div>
+      <div class="award-video-frame">
+        <video
+          playsinline
+          preload="none"
+          poster="assets/certificates/best-learner-cloud-engineering.jpg"
+          aria-label="Best Learner recognition video"
+        >
+          <source data-src="assets/videos/best-learner.mp4" type="video/mp4" />
+          Your browser does not support HTML video. Please update your browser to watch this clip.
+        </video>
+        <button class="award-video-play" type="button" aria-label="Play Best Learner recognition video">Play video <i class="fas fa-play" aria-hidden="true"></i></button>
+      </div>
+      <p class="video-transcript-note">A text transcript is not available for this video.</p>
+    </section>
+    <section class="home-contact-cta section" aria-labelledby="home-contact-title">
+      <h2 id="home-contact-title">Open to Cloud and DevOps roles</h2>
+      <p>Based in Ogun, Nigeria (WAT), and available for remote work.</p>
+      <a href="pages/contact.html" class="btn primary">Email me</a>
+    </section>
+    </main>
 
     <div id="certificateModal" class="certificate-modal" aria-hidden="true">
       <div class="certificate-modal-panel" role="dialog" aria-modal="true" aria-label="Certificate preview">
@@ -476,9 +507,7 @@
             <span>RealKingHubs</span>
           </a>
           <p class="site-footer-copy">
-            Welcome to my cloud engineering portfolio. I build secure AWS and Azure
-            infrastructure, CI/CD pipelines, and automation-focused systems
-            designed for real-world delivery.
+            Open to Cloud and DevOps roles. Based in Ogun, Nigeria (WAT) and available for remote work.
           </p>
         </div>
 
@@ -506,11 +535,11 @@
           <h3>Contact me</h3>
           <div class="site-footer-contact">
             <p><i class="fas fa-location-dot"></i> Ogun, Nigeria</p>
-            <a href="tel:+2349135025695"
-              ><i class="fas fa-square-phone"></i> Phone: +234 913 502 5695</a
+            <a href="tel:+2349135025695" aria-label="Call Kingsley Odo"
+              ><i class="fas fa-square-phone" aria-hidden="true"></i> Call me</a
             >
-            <a href="mailto:odokingsleyu@gmail.com"
-              ><i class="fas fa-envelope"></i> odokingsleyu@gmail.com</a
+            <a href="mailto:odokingsleyu@gmail.com" aria-label="Email Kingsley Odo"
+              ><i class="fas fa-envelope" aria-hidden="true"></i> Email me</a
             >
           </div>
 
@@ -550,7 +579,7 @@
 
       <div class="site-footer-bottom">
         <p>
-          &copy; <span id="year"></span>. All Rights Reserved | Design by
+          &copy; <span id="year">2026</span>. All Rights Reserved | Design by
           <a href="https://realkinghubs.netlify.app">RealKingHubs</a>
         </p>
       </div>
