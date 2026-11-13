@@ -2375,22 +2375,6 @@ body.certificate-modal-open { overflow: hidden; }
   object-fit: contain;
 }
 
-.award-video-frame { position: relative; }
-.award-video-play {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  min-width: 140px;
-  min-height: 48px;
-  border: 1px solid rgba(255,255,255,.7);
-  border-radius: 999px;
-  background: var(--accent-strong);
-  color: #fff;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-}
-.award-video-play[hidden] { display: none; }
 .video-transcript-note { margin: 14px auto 0; max-width: 900px; color: var(--text-2); font-size: 13px; text-align: center; }
 .certificate-pdf-note { text-align: center; margin: -18px auto 22px; font-size: 13px; }
 

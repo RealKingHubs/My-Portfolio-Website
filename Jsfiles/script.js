@@ -311,28 +311,6 @@ document.addEventListener('keydown', event => {
   }
 });
 
-// Defer the award video download until its explicit play action.
-const awardVideo = document.querySelector('.award-video-frame video');
-const awardVideoSource = awardVideo?.querySelector('source[data-src]');
-const awardVideoPlay = document.querySelector('.award-video-play');
-awardVideoPlay?.addEventListener('click', async () => {
-  if (!awardVideo || !awardVideoSource) return;
-  awardVideo.controls = true;
-  if (!awardVideoSource.src) {
-    awardVideoSource.src = awardVideoSource.dataset.src;
-    awardVideo.load();
-  }
-  try {
-    await awardVideo.play();
-    awardVideoPlay.hidden = true;
-  } catch {
-    awardVideoPlay.hidden = false;
-  }
-});
-awardVideo?.addEventListener('pause', () => { if (!awardVideo.ended && awardVideo.currentTime > 0 && awardVideoPlay) awardVideoPlay.hidden = false; });
-awardVideo?.addEventListener('ended', () => { if (awardVideoPlay) awardVideoPlay.hidden = false; });
-
-
 // ----- PARTICLES.JS -----
 
 const particlesRoot = document.getElementById('particles-js');
