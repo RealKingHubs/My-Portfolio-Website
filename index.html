@@ -33,12 +33,8 @@
       ]
     }</script>
     <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800,900&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -52,9 +48,10 @@
     <header id="header">
       <nav class="navbar">
         <div class="logo">
-          <a href="https://realkinghubs.netlify.app"
-            >RealKi<span>ngHubs</span></a
-          >
+          <a href="https://realkinghubs.netlify.app" class="logo-link">
+            <span class="logo-mark">RK</span>
+            <span class="logo-text">RealKingHubs<small>Cloud &amp; DevOps</small></span>
+          </a>
         </div>
         <ul class="nav-links" id="navLinks">
           <li><a href="/#home">Home</a></li>
@@ -70,7 +67,6 @@
               >Blog</a
             >
           </li>
-          <li><a href="pages/contact.html">Contact</a></li>
         </ul>
         <button
           class="menu-toggle"
@@ -81,19 +77,13 @@
         >
           <i class="fas fa-bars"></i>
         </button>
+        <a href="pages/contact.html" class="nav-hire-btn">Hire me →</a>
       </nav>
     </header>
 
     <main id="main-content" tabindex="-1">
     <section id="home" class="hero">
       <div class="hero-content">
-        <div class="hero-status-badge">
-          <span class="status-dot"></span>
-          <span class="status-text"
-            >Cloud &amp; DevOps Engineer</span
-          >
-        </div>
-
         <h1 class="hero-title">
           Hello, I'm <span class="highlight-name">Kingsley Uchenna Odo</span>
         </h1>
@@ -251,7 +241,8 @@
            <h2 class="section-title">Cloud &amp; DevOps Experience</h2>
       </div>
       <div class="experience-list">
-        <article class="experience-card">
+        <article class="experience-card" data-index="01">
+          <div class="experience-card-vline"></div>
           <div class="experience-card-head">
             <div>
               <p class="experience-company">Preferred Digital Business Solutions</p>
@@ -271,7 +262,8 @@
             <span>Bicep</span><span>Application Insights</span><span>Log Analytics</span>
           </div>
         </article>
-        <article class="experience-card">
+        <article class="experience-card" data-index="02">
+          <div class="experience-card-vline"></div>
           <div class="experience-card-head">
             <div>
               <p class="experience-company">Bincom Dev Center</p>
@@ -297,7 +289,7 @@
       <div class="skills-grid">
         <div class="skill-card">
           <div class="skill-card-head">
-            <i class="fab fa-aws"></i>
+            <div class="skill-icon-box"><i class="fab fa-aws"></i></div>
             <h3>Amazon Web Services</h3>
           </div>
           <p class="skill-proof">Built the Drupal AWS platform across multiple Availability Zones, with private RDS, shared EFS, and server access through Systems Manager with no open SSH ports.</p>
@@ -309,7 +301,7 @@
 
         <div class="skill-card">
           <div class="skill-card-head">
-            <img class="brand-mark brand-mark-skill" src="assets/brands/azure.svg" alt="" aria-hidden="true" />
+            <div class="skill-icon-box"><img class="brand-mark brand-mark-skill" src="assets/brands/azure.svg" alt="" aria-hidden="true" /></div>
             <h3>Microsoft Azure</h3>
           </div>
           <p class="skill-proof">Automated cleanup of ACR images older than 30 days and added image lock/unlock protection; maintained Azure DevOps pipelines for mobile and web releases.</p>
@@ -322,7 +314,7 @@
 
         <div class="skill-card">
           <div class="skill-card-head">
-            <i class="fab fa-docker"></i>
+            <div class="skill-icon-box"><i class="fab fa-docker"></i></div>
             <h3>Containers</h3>
           </div>
           <p class="skill-proof">Used Docker Compose with Ansible to cut server setup from hours to under two minutes; containerized Drupal and deployed it to Kubernetes for orchestration.</p>
@@ -484,7 +476,7 @@
     <section class="home-contact-cta section" aria-labelledby="home-contact-title">
       <h2 id="home-contact-title">Open to Cloud and DevOps roles</h2>
       <p>Based in Ogun, Nigeria (WAT), and available for remote work.</p>
-      <a href="pages/contact.html" class="btn primary">Email me</a>
+      <a href="mailto:odokingsleyu@gmail.com" class="btn primary">Email me</a>
     </section>
     </main>
 
@@ -500,7 +492,7 @@
       <div class="site-footer-main">
         <div class="site-footer-brand">
           <a href="#home" class="site-footer-logo">
-            <i class="fas fa-globe-africa"></i>
+            <span class="logo-mark">RK</span>
             <span>RealKingHubs</span>
           </a>
           <p class="site-footer-copy">

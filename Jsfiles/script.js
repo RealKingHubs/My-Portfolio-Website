@@ -323,11 +323,11 @@ function initParticles() {
   particlesJS('particles-js', {
     particles: {
       number:      { value: isSmallScreen ? 18 : 30, density: { enable: true, value_area: 1100 } },
-      color:       { value: '#7c9485' },
-      opacity:     { value: isSmallScreen ? 0.3 : 0.42, random: true },
-      size:        { value: isSmallScreen ? 1.4 : 1.8, random: true },
-      line_linked: { enable: !isSmallScreen, distance: 155, color: '#7c9485', opacity: 0.16, width: 1 },
-      move:        { enable: true, speed: isSmallScreen ? 0.3 : 0.42 },
+      color:       { value: '#6ee7f7' },
+      opacity:     { value: isSmallScreen ? 0.2 : 0.3, random: true },
+      size:        { value: isSmallScreen ? 1.2 : 1.6, random: true },
+      line_linked: { enable: !isSmallScreen, distance: 155, color: '#6ee7f7', opacity: 0.1, width: 1 },
+      move:        { enable: true, speed: isSmallScreen ? 0.3 : 0.4 },
     },
     interactivity: {
       detect_on: 'canvas',
