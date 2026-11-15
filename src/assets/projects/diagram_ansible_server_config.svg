@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Subnet Gradients -->
+    <linearGradient id="publicSubnetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+    
+    <!-- Neon Glow Filters -->
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glowOrange" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Subtle grid lines -->
+  <path d="M 0,50 L 800,50 M 0,100 L 800,100 M 0,150 L 800,150 M 0,200 L 800,200 M 0,250 L 800,250 M 0,300 L 800,300 M 0,350 L 800,350 M 0,400 L 800,400" stroke="#1e293b" stroke-width="1" stroke-opacity="0.5" />
+  <path d="M 100,0 L 100,450 M 200,0 L 200,450 M 300,0 L 300,450 M 400,0 L 400,450 M 500,0 L 500,450 M 600,0 L 600,450 M 700,0 L 700,450" stroke="#1e293b" stroke-width="1" stroke-opacity="0.5" />
+
+  <!-- TITLE -->
+  <text x="30" y="35" font-family="'Manrope', sans-serif" font-size="18" font-weight="700" fill="#ffffff">Ansible Server Configuration &amp; Traffic Flow</text>
+
+  <!-- AWS VPC BOUNDARY -->
+  <rect x="230" y="60" width="540" height="360" rx="12" fill="none" stroke="#2a7a56" stroke-width="2" stroke-dasharray="6,4" />
+  <text x="245" y="82" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#2a7a56" letter-spacing="1">AWS VPC REGION</text>
+
+  <!-- PUBLIC SUBNET -->
+  <rect x="250" y="100" width="220" height="300" rx="8" fill="url(#publicSubnetGrad)" stroke="#b7c5bc" stroke-width="1.5" />
+  <text x="265" y="122" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" fill="#b7c5bc">Public Subnet (Bastion &amp; LB)</text>
+
+  <!-- PRIVATE SUBNET -->
+  <rect x="490" y="100" width="260" height="300" rx="8" fill="url(#publicSubnetGrad)" stroke="#1f6345" stroke-width="1.5" />
+  <text x="505" y="122" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" fill="#6c9f84">Private Subnet (Web Servers)</text>
+
+  <!-- ================= COMPONENTS ================= -->
+
+  <!-- ANSIBLE CONTROLLER (Left) -->
+  <g id="ansibleController">
+    <!-- Outer Card -->
+    <rect x="30" y="180" width="160" height="110" rx="10" fill="#1e293b" stroke="#53a97c" stroke-width="2" filter="url(#glowGreen)" />
+    <!-- Icon Placeholder (Laptop/Terminal) -->
+    <rect x="45" y="195" width="24" height="18" rx="2" fill="none" stroke="#53a97c" stroke-width="2" />
+    <line x1="40" y1="216" x2="74" y2="216" stroke="#53a97c" stroke-width="2" />
+    <text x="80" y="210" font-family="'Manrope', sans-serif" font-size="13" font-weight="700" fill="#ffffff">Ansible Control</text>
+    <text x="45" y="245" font-family="'Manrope', sans-serif" font-size="11" fill="#b7c5bc">Local Server / CI</text>
+    <text x="45" y="265" font-family="'Manrope', sans-serif" font-size="10" font-weight="600" fill="#53a97c">&gt;_ run playbooks</text>
+  </g>
+
+  <!-- BASTION HOST (Public Subnet) -->
+  <g id="bastionHost">
+    <rect x="275" y="145" width="170" height="80" rx="8" fill="#1e293b" stroke="#e0a96d" stroke-width="2" filter="url(#glowOrange)" />
+    <!-- Shield/Lock Icon -->
+    <path d="M 292,170 L 297,165 L 302,170 L 302,178 C 302,183 297,187 297,187 C 297,187 292,183 292,178 Z" fill="none" stroke="#e0a96d" stroke-width="2" />
+    <text x="312" y="178" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#ffffff">Bastion Host</text>
+    <text x="292" y="205" font-family="'Manrope', sans-serif" font-size="10" fill="#e0a96d">SSH Jump Node</text>
+  </g>
+
+  <!-- LOAD BALANCER (Public Subnet) -->
+  <g id="loadBalancer">
+    <rect x="275" y="295" width="170" height="80" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2" filter="url(#glowBlue)" />
+    <!-- ALB Icon representation -->
+    <circle cx="297" cy="325" r="8" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path d="M 297,325 L 307,320 M 297,325 L 307,330" stroke="#38bdf8" stroke-width="2" />
+    <text x="312" y="328" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#ffffff">AWS CLB / ALB</text>
+    <text x="292" y="355" font-family="'Manrope', sans-serif" font-size="10" fill="#38bdf8">Ports 80/443 Balancer</text>
+  </g>
+
+  <!-- PRIVATE EC2 WEB SERVERS -->
+  <!-- Server 1 -->
+  <g id="ec2Server1">
+    <rect x="520" y="145" width="200" height="80" rx="8" fill="#1e293b" stroke="#53a97c" stroke-width="1.5" />
+    <rect x="535" y="165" width="16" height="12" rx="1" fill="none" stroke="#53a97c" stroke-width="2" />
+    <text x="560" y="175" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#ffffff">EC2 Server (Web 01)</text>
+    <text x="535" y="205" font-family="'Manrope', sans-serif" font-size="10" fill="#6d7c73">Nginx Configured &amp; Hardened</text>
+  </g>
+  <!-- Server 2 -->
+  <g id="ec2Server2">
+    <rect x="520" y="280" width="200" height="80" rx="8" fill="#1e293b" stroke="#53a97c" stroke-width="1.5" />
+    <rect x="535" y="300" width="16" height="12" rx="1" fill="none" stroke="#53a97c" stroke-width="2" />
+    <text x="560" y="310" font-family="'Manrope', sans-serif" font-size="12" font-weight="700" fill="#ffffff">EC2 Server (Web 02)</text>
+    <text x="535" y="340" font-family="'Manrope', sans-serif" font-size="10" fill="#6d7c73">Nginx Configured &amp; Hardened</text>
+  </g>
+
+  <!-- ================= PATH CONNECTIONS ================= -->
+
+  <!-- Ansible Config Path (Green Dashed) -->
+  <!-- Path: Ansible -> Bastion -->
+  <path d="M 190,215 L 230,215 A 10,10 0 0,0 240,205 L 240,185 A 10,10 0 0,1 250,175 L 275,175" fill="none" stroke="#53a97c" stroke-width="2.5" stroke-dasharray="6,4" />
+  <circle cx="275" cy="175" r="4" fill="#53a97c" />
+
+  <!-- Path: Bastion -> EC2 Servers (Split to both) -->
+  <!-- To Server 1 -->
+  <path d="M 445,185 L 520,185" fill="none" stroke="#53a97c" stroke-width="2.5" stroke-dasharray="6,4" />
+  <polygon points="520,185 512,180 512,190" fill="#53a97c" />
+  <!-- To Server 2 -->
+  <path d="M 400,225 L 400,250 A 10,10 0 0,0 410,260 L 480,260 A 10,10 0 0,1 490,270 L 490,320 A 10,10 0 0,0 500,330 L 520,330" fill="none" stroke="#53a97c" stroke-width="2" stroke-dasharray="6,4" />
+  <polygon points="520,330 512,326 512,334" fill="#53a97c" />
+
+  <!-- User Web Traffic Path (Blue Solid) -->
+  <!-- Traffic into Load Balancer -->
+  <path d="M 210,335 L 275,335" fill="none" stroke="#38bdf8" stroke-width="3" />
+  <polygon points="275,335 267,330 267,340" fill="#38bdf8" />
+  <text x="212" y="325" font-family="'Manrope', sans-serif" font-size="9" font-weight="700" fill="#38bdf8">Web Traffic</text>
+
+  <!-- Load Balancer -> EC2 Servers -->
+  <!-- To Server 1 -->
+  <path d="M 445,320 L 470,320 A 10,10 0 0,0 480,310 L 480,215 A 10,10 0 0,1 490,205 L 520,205" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+  <polygon points="520,205 512,201 512,209" fill="#38bdf8" />
+  <!-- To Server 2 -->
+  <path d="M 445,335 L 520,335" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+  <polygon points="520,335 512,331 512,339" fill="#38bdf8" />
+
+  <!-- Legend -->
+  <g transform="translate(30, 395)">
+    <!-- Ansible Config Line -->
+    <line x1="0" y1="10" x2="30" y2="10" stroke="#53a97c" stroke-width="2.5" stroke-dasharray="5,3" />
+    <text x="40" y="14" font-family="'Manrope', sans-serif" font-size="10" fill="#b7c5bc">Ansible SSH Configuration Path</text>
+    
+    <!-- Traffic Line -->
+    <line x1="280" y1="10" x2="310" y2="10" stroke="#38bdf8" stroke-width="3" />
+    <text x="320" y="14" font-family="'Manrope', sans-serif" font-size="10" fill="#b7c5bc">HTTP/HTTPS Web Traffic</text>
+
+    <!-- Boundary Line -->
+    <rect x="540" y="3" width="30" height="14" rx="2" fill="none" stroke="#2a7a56" stroke-width="2" stroke-dasharray="4,2" />
+    <text x="580" y="14" font-family="'Manrope', sans-serif" font-size="10" fill="#b7c5bc">AWS VPC Boundary</text>
+  </g>
+</svg>

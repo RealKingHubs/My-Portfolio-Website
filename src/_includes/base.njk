@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="{{ canonical }}" />
+
+    {# Open Graph #}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ ogTitle or title }}" />
+    <meta property="og:description" content="{{ ogDesc or description }}" />
+    <meta property="og:url" content="{{ canonical }}" />
+    <meta property="og:image" content="https://realkinghubs.netlify.app/assets/images/Blue-pic.png" />
+
+    {# Twitter Card #}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ ogTitle or title }}" />
+    <meta name="twitter:description" content="{{ ogDesc or description }}" />
+    <meta name="twitter:image" content="https://realkinghubs.netlify.app/assets/images/Blue-pic.png" />
+
+    <meta name="description" content="{{ description }}" />
+    <title>{{ title }}</title>
+
+    {% if schema %}<script type="application/ld+json">{{ schema | safe }}</script>{% endif %}
+
+    <link rel="icon" type="image/svg+xml" href="/assets/logo/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    {# Split CSS — load order matters #}
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components/nav.css" />
+    <link rel="stylesheet" href="/css/components/hero.css" />
+    <link rel="stylesheet" href="/css/components/about.css" />
+    <link rel="stylesheet" href="/css/components/skills.css" />
+    <link rel="stylesheet" href="/css/components/projects.css" />
+    <link rel="stylesheet" href="/css/components/experience.css" />
+    <link rel="stylesheet" href="/css/components/certificates.css" />
+    <link rel="stylesheet" href="/css/components/contact.css" />
+    <link rel="stylesheet" href="/css/components/footer.css" />
+    <link rel="stylesheet" href="/css/components/modal.css" />
+    <link rel="stylesheet" href="/css/components/motion.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="{{ skipTarget }}">Skip to content</a>
+    <div id="particles-js"></div>
+
+    {% include "partials/nav.njk" %}
+
+    {{ content | safe }}
+
+    {# Image zoom modal — only needed on pages that have zoomable images #}
+    {% if imageModal %}
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg" alt="Project preview" />
+    </div>
+    {% endif %}
+
+    {# Certificate modal — only on index #}
+    {% if certModal %}
+    <div id="certificateModal" class="certificate-modal" aria-hidden="true">
+      <div class="certificate-modal-panel" role="dialog" aria-modal="true" aria-label="Certificate preview">
+        <button class="certificate-modal-close" type="button" aria-label="Close certificate preview">&times;</button>
+        <button class="certificate-modal-zoom" type="button" aria-pressed="false">Zoom in</button>
+        <img class="certificate-modal-image" alt="" />
+      </div>
+    </div>
+    {% endif %}
+
+    {% include "partials/footer.njk" %}
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    {% if contactForm %}<script src="/js/data.js" defer></script>{% endif %}
+  </body>
+</html>

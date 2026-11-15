@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: "Projects | Kingsley Uchenna Odo"
+description: "Cloud engineering projects by RealKingHubs covering AWS, Azure, CI/CD, automation, Terraform, and infrastructure delivery."
+ogTitle: "Projects | Kingsley Uchenna Odo"
+ogDesc: "Cloud and DevOps projects by Kingsley Uchenna Odo, including AWS, Azure, CI/CD, Kubernetes, and infrastructure automation."
+canonical: "https://realkinghubs.netlify.app/projects/"
+skipTarget: "#project-library"
+imageModal: true
+---
+
+<section class="page-hero page-hero-projects">
+  <div class="page-hero-inner">
+    <p class="page-hero-tag">Project Showcase</p>
+    <h1>Real cloud and DevOps projects built for reliability.</h1>
+    <p class="page-hero-copy">
+      Each project covers the problem, solution, and infrastructure behind it.
+    </p>
+    <div class="page-hero-actions">
+      <a href="#project-library" class="btn primary">Browse Projects</a>
+      <a href="/contact/" class="btn secondary">Start a Conversation</a>
+    </div>
+  </div>
+</section>
+
+<section id="project-library" tabindex="-1" class="projects section project-page-section">
+  <div class="project-section-head">
+    <h2 class="section-title">Projects Library</h2>
+    <p class="projects-page-copy">
+      Expand any card for implementation details, outcomes, tech stack, article links,
+      and supporting delivery context.
+    </p>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter active" data-filter="all" type="button">All</button>
+    <button class="filter" data-filter="aws" type="button">AWS</button>
+    <button class="filter" data-filter="cicd" type="button">CI/CD</button>
+    <button class="filter" data-filter="iac" type="button">IaC</button>
+    <button class="filter" data-filter="containers" type="button">Containers</button>
+    <button class="filter" data-filter="linux" type="button">Linux</button>
+  </div>
+
+  <div class="project-grid project-grid-library">
+    {% for project in projects %}
+      {% include "partials/project-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
